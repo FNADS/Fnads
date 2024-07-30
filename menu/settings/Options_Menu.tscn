@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://celpcwdhg77cd"]
 
-[ext_resource type="Script" path="res://menu/Options_Menu.gd" id="1_fpibm"]
+[ext_resource type="Script" path="res://menu/settings/Options_Menu.gd" id="1_fpibm"]
 [ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/Background.png" id="2_yeiwb"]
 [ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://assets/font/multi-1.tres" id="3_siq1j"]
 [ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="4_fdec0"]
 [ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="4_sfwkc"]
-[ext_resource type="PackedScene" uid="uid://p8kdoop86n7m" path="res://menu/volume_slider.tscn" id="5_7kt8k"]
-[ext_resource type="PackedScene" uid="uid://dfxobmsgcqsjy" path="res://menu/window_mode_button.tscn" id="6_r6e0k"]
-[ext_resource type="PackedScene" uid="uid://bbmdv2arhaosv" path="res://menu/resolution_mode_button.tscn" id="7_1bker"]
+[ext_resource type="PackedScene" uid="uid://p8kdoop86n7m" path="res://menu/settings/volume_slider.tscn" id="5_7kt8k"]
+[ext_resource type="PackedScene" uid="uid://dfxobmsgcqsjy" path="res://menu/settings/window_mode_button.tscn" id="6_r6e0k"]
+[ext_resource type="PackedScene" uid="uid://bbmdv2arhaosv" path="res://menu/settings/resolution_mode_button.tscn" id="7_1bker"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

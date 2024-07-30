@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://p8kdoop86n7m"]
 
-[ext_resource type="Script" path="res://menu/volume_slider.gd" id="1_thtek"]
+[ext_resource type="Script" path="res://menu/settings/volume_slider.gd" id="1_thtek"]
 
 [node name="volume_slider" type="HSlider"]
 anchors_preset = 15

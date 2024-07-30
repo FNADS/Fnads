@@ -15,6 +15,14 @@ run/main_scene="res://menu/Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://audio/Default_Buses.tres"
+
+[autoload]
+
+Splash="*res://menu/splash.tscn"
+
 [display]
 
 window/size/viewport_width=1920
