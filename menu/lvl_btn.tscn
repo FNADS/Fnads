@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqe2ldrc3l47k"]
+
+[ext_resource type="Script" path="res://menu/lvl_btn.gd" id="1_e06vp"]
+
+[node name="lvl_btn" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -15.5
+offset_right = 20.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+action_mode = 0
+text = "Test"
+script = ExtResource("1_e06vp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
