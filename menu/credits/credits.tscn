@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://8b1dsr81woxb"]
+
+[ext_resource type="Script" path="res://menu/credits/credits.gd" id="1_26k0h"]
+[ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="2_fjujy"]
+[ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/Background.png" id="2_xammh"]
+[ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://assets/font/multi-1.tres" id="3_tj7x6"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="4_px4ke"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_26k0h")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xammh")
+
+[node name="Credits Container" type="PanelContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = -150.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_tj7x6")
+
+[node name="Back" type="Button" parent="Background/Credits Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("4_px4ke")
+action_mode = 0
+text = "Return"
+flat = true
+
+[node name="Credits" type="Label" parent="Background/Credits Container"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_px4ke")
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -720.0
+offset_top = -250.0
+offset_right = 720.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Background/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_fjujy")
+text = "PinocchioP - Mogu Mogu"
+
+[connection signal="pressed" from="Background/Credits Container/Back" to="." method="_on_back_pressed"]
