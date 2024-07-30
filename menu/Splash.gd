@@ -23,4 +23,4 @@ func transition():
 		has_played = true
 		black_screen.visible = true
 		splash_fade.play("Splash_Animation")
-		show()
+		show()  # Ensure the splash screen is visible

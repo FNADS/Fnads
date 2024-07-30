@@ -6,7 +6,7 @@ func _ready() -> void:
 
 func _on_splash_finished():
 	print("Splash finished")
-	# Perform any additional setup needed after the splash screen finishes
+# Perform any additional setup needed after the splash screen finishes
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://menu/Menu.tscn")
@@ -17,7 +17,7 @@ func _on_settings_pressed():
 
 
 func _on_credits_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://menu/credits/credits.tscn")
 
 
 func _on_quit_pressed():
