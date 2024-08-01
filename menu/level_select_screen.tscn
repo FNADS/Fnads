@@ -3,11 +3,18 @@
 [ext_resource type="Script" path="res://menu/level_select_screen.gd" id="1_2dn3s"]
 [ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/Background.png" id="1_u6k8t"]
 
-[node name="Level_Select_Screen" type="CanvasLayer"]
+[node name="Level_Select_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_2dn3s")
 dir_path = "res://nights"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,6 +23,7 @@ grow_vertical = 2
 texture = ExtResource("1_u6k8t")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

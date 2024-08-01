@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FNAF Restructured"
-run/main_scene="res://menu/splash.tscn"
+run/main_scene="res://menu/Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,16 +21,12 @@ buses/default_bus_layout="res://audio/Default_Buses.tres"
 
 [autoload]
 
-Global="*res://global.gd"
+Splash="*res://menu/splash.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-
-[dotnet]
-
-project/assembly_name="FNAF Restructured"
 
 [editor]
 
