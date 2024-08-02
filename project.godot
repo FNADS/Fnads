@@ -21,12 +21,16 @@ buses/default_bus_layout="res://audio/default_buses.tres"
 
 [autoload]
 
-Splash="*res://menu/splash.tscn"
+Global="*res://global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="FNAF Restructured"
 
 [editor]
 
