@@ -1,8 +1,4 @@
-extends Control
-
-func _ready() -> void:
-	Splash.connect("on_transition_finished", Callable(self, "_on_splash_finished"))
-	Splash.transition()
+extends CanvasLayer
 
 func _on_splash_finished():
 	print("Splash finished")

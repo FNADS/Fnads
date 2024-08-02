@@ -5,13 +5,10 @@
 [ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/menu-1.tres" id="3_v5ckv"]
 [ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="4_m4nwl"]
 
-[node name="Menu" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_gmy4w")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_wwj7e")

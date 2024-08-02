@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FNAF Restructured"
-run/main_scene="res://menu/Menu.tscn"
+run/main_scene="res://menu/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,6 +27,10 @@ Splash="*res://menu/splash.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="FNAF Restructured"
 
 [editor]
 
