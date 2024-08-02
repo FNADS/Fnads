@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bce0tw3gf05xp"]
 
-[ext_resource type="Script" path="res://menu/Menu.gd" id="1_gmy4w"]
-[ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/Background.png" id="2_wwj7e"]
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_gmy4w"]
+[ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_wwj7e"]
 [ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/menu-1.tres" id="3_v5ckv"]
 [ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="4_m4nwl"]
 
@@ -9,21 +9,20 @@
 script = ExtResource("1_gmy4w")
 
 [node name="Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_wwj7e")
 
 [node name="Menu Elements" type="MarginContainer" parent="Background"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -810.0
-offset_top = -390.0
-offset_right = 810.0
-offset_bottom = 390.0
+anchors_preset = -1
+anchor_left = 0.078125
+anchor_top = 0.138889
+anchor_right = 0.921875
+anchor_bottom = 0.861111
 grow_horizontal = 2
 grow_vertical = 2
 

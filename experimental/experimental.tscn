@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjvppq41m0yj3"]
 
 [ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/menu-1.tres" id="1_oddfd"]
-[ext_resource type="Script" path="res://experimental/Scroll_Text.gd" id="2_0oqrw"]
+[ext_resource type="Script" path="res://experimental/scroll_text.gd" id="2_0oqrw"]
 
 [node name="Experimental" type="Control"]
 visible = false
