@@ -17,7 +17,7 @@ func save_game() -> void:
 ## [br]
 ## Returns: success
 func load_game() -> bool:
-	var load_file : FileAccess = FileAccess.open("user://save_data.json", FileAccess.READ);
+	var load_file : FileAccess = FileAccess.open(+"user://save_data.json", FileAccess.READ);
 	
 	if FileAccess.get_open_error() != Error.OK: return false;
 	
@@ -30,7 +30,7 @@ func load_game() -> bool:
 	return true;
 	
 	
-func load_settings(settings_data: Dictionary):
+func load_settings(settings_data: Dictionary) -> void:
 	Global.settings = settings_data;
 	Global.display_manager.set_window_mode(settings_data["window_mode"] as int);
 	Global.display_manager.set_window_resolution(settings_data["resolution"] as int);
@@ -38,7 +38,7 @@ func load_settings(settings_data: Dictionary):
 		AudioServer.set_bus_volume_db(i, linear_to_db(settings_data["volume"][i] as float));
 		
 	
-func load_game_state(game_state_data: Dictionary):
+func load_game_state(game_state_data: Dictionary) -> void:
 	# TODO: if any loadable game states are added, implement the loading for it!
 	pass
 	
