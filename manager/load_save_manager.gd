@@ -17,7 +17,7 @@ func save_game() -> void:
 ## [br]
 ## Returns: success
 func load_game() -> bool:
-	var load_file : FileAccess = FileAccess.open(+"user://save_data.json", FileAccess.READ);
+	var load_file : FileAccess = FileAccess.open("user://save_data.json", FileAccess.READ);
 	
 	if FileAccess.get_open_error() != Error.OK: return false;
 	
