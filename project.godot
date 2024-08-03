@@ -21,7 +21,7 @@ buses/default_bus_layout="res://audio/default_buses.tres"
 
 [autoload]
 
-Splash="*res://menu/splash.tscn"
+Global="*res://global.gd"
 
 [display]
 

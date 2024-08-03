@@ -8,7 +8,7 @@ var grow_size := Vector2(1.1, 1.1)
 func _on_mouse_entered() -> void:
 	grow_btn(grow_size, .1)
 
-func _on_mouse_exited():
+func _on_mouse_exited() -> void:
 	grow_btn(original_size, .1)
 
 func grow_btn(end_size: Vector2, duration: float) -> void:

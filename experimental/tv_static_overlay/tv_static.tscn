@@ -5,8 +5,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uje5y"]
 shader = ExtResource("1_wp0qs")
 shader_parameter/transparency = 0.8
-shader_parameter/jitter_frequenzy = 1.0
-shader_parameter/jitter_amplitude = 250.0
+shader_parameter/jitter_frequenzy = 100.0
+shader_parameter/jitter_amplitude = 5.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_s3nlk"]
 noise_type = 0
