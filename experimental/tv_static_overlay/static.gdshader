@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 const float pixelation = 128.0;
-uniform float transparency = 0.5;
+uniform float transparency = 1.0;
 uniform float jitter_frequenzy = 100;
 uniform float jitter_amplitude = 5;
 

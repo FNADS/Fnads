@@ -8,3 +8,5 @@ script = ExtResource("2_tdriq")
 
 [node name="Label" parent="HBoxContainer" index="0"]
 text = "Resolution"
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="on_resolution_selected"]
