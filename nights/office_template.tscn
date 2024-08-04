@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://nights/office_template.gd" id="1_4mkh7"]
 [ext_resource type="Texture2D" uid="uid://c5fq3ufsmnwct" path="res://_placeholder/placeholder_office.png" id="2_fwsgi"]
 [ext_resource type="Texture2D" uid="uid://2bmls0ot7e0x" path="res://_placeholder/placeholder_office_desk.png" id="3_wcamg"]
-[ext_resource type="PackedScene" uid="uid://d3y8puv62ttr7" path="res://objects/cassett_player.tscn" id="4_k2e2c"]
+[ext_resource type="PackedScene" uid="uid://d3y8puv62ttr7" path="res://objects/cassette_player.tscn" id="4_k2e2c"]
 [ext_resource type="PackedScene" uid="uid://c5ckvt8xwjnov" path="res://objects/cerber.tscn" id="4_tg5vf"]
 
 [node name="Office" type="CanvasLayer"]

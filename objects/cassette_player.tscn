@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3y8puv62ttr7"]
 
-[ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassett_player.png" id="1_q7bm5"]
-[ext_resource type="Script" path="res://objects/cassett_player.gd" id="1_sokl1"]
+[ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassette_player.png" id="1_q7bm5"]
+[ext_resource type="Script" path="res://objects/cassette_player.gd" id="1_sokl1"]
 [ext_resource type="AudioStream" uid="uid://btqt7gvuvj2m8" path="res://_placeholder/mogu_mogu_music_box.mp3" id="2_gioj2"]
 [ext_resource type="AudioStream" uid="uid://58tslom03o6u" path="res://audio/sound_effects/cassette_tape_button.mp3" id="4_p1dmm"]
 
@@ -24,9 +24,9 @@ script = ExtResource("1_sokl1")
 position = Vector2(0, 1)
 texture = ExtResource("1_q7bm5")
 
-[node name="Cassett" type="Area2D" parent="Texture"]
+[node name="Cassette" type="Area2D" parent="Texture"]
 
-[node name="Shape" type="CollisionShape2D" parent="Texture/Cassett"]
+[node name="Shape" type="CollisionShape2D" parent="Texture/Cassette"]
 position = Vector2(0.5, 88.5)
 shape = SubResource("RectangleShape2D_g6epe")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
@@ -51,20 +51,20 @@ position = Vector2(90, -35)
 shape = SubResource("RectangleShape2D_rautt")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="CassettMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="CassetteMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_gioj2")
 bus = &"Music"
 
-[node name="CassettPlayerButtons" type="AudioStreamPlayer2D" parent="."]
+[node name="CassettePlayerButtons" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_p1dmm")
 bus = &"Sound Effects"
 
-[connection signal="mouse_entered" from="Texture/Cassett" to="." method="_on_cassett_enter"]
-[connection signal="mouse_exited" from="Texture/Cassett" to="." method="_on_mouse_exit_any"]
+[connection signal="mouse_entered" from="Texture/Cassette" to="." method="_on_cassette_enter"]
+[connection signal="mouse_exited" from="Texture/Cassette" to="." method="_on_mouse_exit_any"]
 [connection signal="mouse_entered" from="Texture/Rewind" to="." method="_on_rewind_enter"]
 [connection signal="mouse_exited" from="Texture/Rewind" to="." method="_on_mouse_exit_any"]
 [connection signal="mouse_entered" from="Texture/Stop" to="." method="_on_stop_enter"]
 [connection signal="mouse_exited" from="Texture/Stop" to="." method="_on_mouse_exit_any"]
 [connection signal="mouse_entered" from="Texture/Play" to="." method="_on_play_enter"]
 [connection signal="mouse_exited" from="Texture/Play" to="." method="_on_mouse_exit_any"]
-[connection signal="finished" from="CassettPlayerButtons" to="." method="_on_music_finish"]
+[connection signal="finished" from="CassettePlayerButtons" to="." method="_on_music_finish"]
