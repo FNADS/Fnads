@@ -2,16 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dqe2ldrc3l47k" path="res://menu/lvl_btn.tscn" id="1_ovp1t"]
 
-[node name="Night 1" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Night 1" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,5 +28,8 @@ grow_vertical = 2
 text = "Placeholder"
 
 [node name="Back" parent="." instance=ExtResource("1_ovp1t")]
+level_path = "res://menu/level_select_screen.tscn"
+
+[node name="Back" parent="Back" instance=ExtResource("1_ovp1t")]
 layout_mode = 1
 level_path = "res://menu/level_select_screen.tscn"

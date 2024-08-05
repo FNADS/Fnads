@@ -6,7 +6,6 @@ extends Control
 func _ready() -> void:
 	add_window_mode_items();
 	option_button.select(Global.settings["window_mode"]);
-	option_button.item_selected.connect(on_window_mode_selected);
 
 
 func add_window_mode_items() -> void:

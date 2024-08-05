@@ -11,3 +11,5 @@ grow_vertical = 2
 max_value = 1.0
 step = 0.001
 script = ExtResource("1_thtek")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]
