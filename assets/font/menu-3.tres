@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://ck2764u743oc3"]
 
-[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/Vividly-Regular.ttf" id="1_eg2lb"]
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_regular.ttf" id="1_eg2lb"]
 
 [resource]
 Button/colors/font_outline_color = Color(0, 0, 0, 1)

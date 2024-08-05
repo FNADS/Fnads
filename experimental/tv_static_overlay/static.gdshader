@@ -11,5 +11,5 @@ void fragment() {
 	
 	vec3 col = step(vec3(0.5),texture(TEXTURE, pixelated_UV).rgb);
     
-    COLOR = vec4(col, 0.8);
+    COLOR = vec4(col, transparency);
 }

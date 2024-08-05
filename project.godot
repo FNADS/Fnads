@@ -14,7 +14,6 @@ config/name="FNAF Restructured"
 run/main_scene="res://menu/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
-config/main_scene="res://menu/splash.tscn"
 
 [audio]
 
@@ -22,7 +21,7 @@ buses/default_bus_layout="res://audio/default_buses.tres"
 
 [autoload]
 
-Splash="*res://menu/splash.tscn"
+Global="*res://global.gd"
 
 [display]
 
