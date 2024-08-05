@@ -4,7 +4,6 @@ extends Node
 var load_save_manager : LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
 var display_manager : DisplayManager = preload("res://manager/display_manager.gd").new();
 
-
 var settings : Dictionary;
 var game_state : Dictionary;
 
@@ -22,7 +21,7 @@ func init_default_settings() -> void:
 	var default_settings : Dictionary = {
 		"show_splash_screen": true,
 		"window_mode": 1,
-		"resolution": 0,
+		"resolution": 1,
 		"volume": [],
 	}
 	for i in AudioServer.bus_count:
