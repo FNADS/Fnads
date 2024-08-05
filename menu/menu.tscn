@@ -35,6 +35,7 @@ text = "Five Nights At Dog School"
 
 [node name="Menu Options" type="VBoxContainer" parent="Background/Menu Elements"]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 8
 
 [node name="Play" type="Button" parent="Background/Menu Elements/Menu Options"]

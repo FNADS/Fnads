@@ -47,8 +47,8 @@ func set_window_mode(index : int) -> void:
 		_:
 			pass
 
-
+## Deprecated: (I still keep it for when we might  need it in the future)
 ## Return the scale for a viewport based on the default and currently selected resolution
-func get_viewport_scale() -> Vector2:
-	var current_resolution := (RESOLUTION_ARRAY[Global.settings["resolution"]] as Vector2);
-	return current_resolution / (default_resolution as Vector2);
+#func get_viewport_scale() -> Vector2:
+	#var current_resolution := (RESOLUTION_ARRAY[Global.settings["resolution"]] as Vector2);
+	#return current_resolution / (default_resolution as Vector2);
