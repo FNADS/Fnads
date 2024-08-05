@@ -9,7 +9,10 @@ extends Control
 func _ready() -> void:
 	add_resolution_items();
 	option_button.select(Global.settings["resolution"]);
+<<<<<<< HEAD
 	option_button.item_selected.connect(on_resolution_selected)
+=======
+>>>>>>> 9276dc2cb6eb348ad467a4d7080d00437785b8c1
 
 
 func add_resolution_items() -> void:
