@@ -25,7 +25,7 @@ position = Vector2(970, 1234)
 scale = Vector2(1.47778, 1)
 texture = ExtResource("3_wcamg")
 
-[node name="CassettPlayer" parent="." instance=ExtResource("4_k2e2c")]
+[node name="CassettePlayer" parent="." instance=ExtResource("4_k2e2c")]
 position = Vector2(1442, 814)
 scale = Vector2(0.55, 0.55)
 

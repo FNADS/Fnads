@@ -46,7 +46,7 @@ theme = ExtResource("3_yxhq0")
 [node name="Master_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
 layout_mode = 2
 theme = ExtResource("4_2pcel")
-text = "Master Volume"
+text = "MASTER_VOLUME"
 horizontal_alignment = 1
 
 [node name="Master" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
@@ -57,7 +57,7 @@ bus_name = "Master"
 [node name="Music_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
 layout_mode = 2
 theme = ExtResource("4_2pcel")
-text = "Music Volume"
+text = "MUSIC_VOLUME"
 horizontal_alignment = 1
 
 [node name="Music" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
@@ -68,7 +68,7 @@ bus_name = "Music"
 [node name="Sound Effects_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
 layout_mode = 2
 theme = ExtResource("4_2pcel")
-text = "SFX Volume"
+text = "SFX_VOLUME"
 horizontal_alignment = 1
 
 [node name="Sound Effects" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
@@ -113,7 +113,7 @@ grow_vertical = 0
 size_flags_vertical = 8
 theme = ExtResource("8_0fyha")
 action_mode = 0
-text = "Return"
+text = "RETURN"
 flat = true
 
 [connection signal="pressed" from="Background/Back" to="." method="_on_back_pressed"]

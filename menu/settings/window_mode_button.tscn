@@ -8,6 +8,6 @@ script = ExtResource("2_to0x1")
 
 [node name="Label" parent="HBoxContainer" index="0"]
 size_flags_vertical = 1
-text = "Display Mode"
+text = "DISPLAY_MODE"
 
 [connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="on_window_mode_selected"]

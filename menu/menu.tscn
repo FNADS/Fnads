@@ -42,7 +42,7 @@ size_flags_vertical = 8
 layout_mode = 2
 theme = ExtResource("4_m4nwl")
 action_mode = 0
-text = "Play"
+text = "PLAY"
 flat = true
 alignment = 0
 
@@ -50,8 +50,7 @@ alignment = 0
 layout_mode = 2
 theme = ExtResource("4_m4nwl")
 action_mode = 0
-text = "Settings
-"
+text = "SETTINGS"
 flat = true
 alignment = 0
 
@@ -59,7 +58,7 @@ alignment = 0
 layout_mode = 2
 theme = ExtResource("4_m4nwl")
 action_mode = 0
-text = "Credits"
+text = "CREDITS"
 flat = true
 alignment = 0
 
@@ -67,7 +66,7 @@ alignment = 0
 layout_mode = 2
 theme = ExtResource("4_m4nwl")
 action_mode = 0
-text = "Quit"
+text = "QUIT"
 flat = true
 alignment = 0
 
