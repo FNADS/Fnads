@@ -89,11 +89,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Window_Mode_Button" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_1t8mh")]
+[node name="WindowModeButton" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_1t8mh")]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Resolution_Mode_Button" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_juw5m")]
+[node name="ResolutionModeButton" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_juw5m")]
 layout_mode = 2
 size_flags_vertical = 3
 

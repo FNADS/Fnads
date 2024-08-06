@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://defa1h0aimlex" path="res://menu/settings/options_display_button.tscn" id="1_qg6ip"]
 [ext_resource type="Script" path="res://menu/settings/resolution_mode_button.gd" id="2_tdriq"]
 
-[node name="Resolution_Mode_Button" instance=ExtResource("1_qg6ip")]
+[node name="ResolutionModeButton" instance=ExtResource("1_qg6ip")]
 script = ExtResource("2_tdriq")
 
 [node name="Label" parent="HBoxContainer" index="0"]
