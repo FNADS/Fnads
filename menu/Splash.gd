@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var godot := $Godot as TextureRect
 @onready var minawan_prod := $Minawan_Productions as TextureRect
+@onready var yippee := $Yippee as AudioStreamPlayer
 
 func _ready() -> void:
 	var tween = create_tween();
@@ -9,6 +10,7 @@ func _ready() -> void:
 	if (Global.settings["show_splash_screen"]):
 		tween.tween_property(godot, "modulate:a", 1, 1.1);
 		tween.tween_property(godot, "modulate:a", 0, 1.1);
+		tween.tween_callback(Callable(yippee, "play"));
 		tween.tween_property(minawan_prod, "modulate:a", 1, 1.1);
 		tween.tween_property(minawan_prod, "modulate:a", 0, 1.1);
 		

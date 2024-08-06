@@ -2,12 +2,6 @@ class_name DisplayManager
 ## Handles all the DisplayServer interactions and has display related constants.
 
 
-<<<<<<< HEAD
-const RESOLUTION_ARRAY : Array[Vector2i] = [
-	Vector2i(1920, 1080), # Program was natively built for this resolution
-	Vector2i(3840, 2160), # Just gives a lot of blank space
-	Vector2i(1280, 720), # Doesn't really work all that well
-=======
 const default_resolution := Vector2i(1920, 1080);
 
 
@@ -16,7 +10,6 @@ const RESOLUTION_ARRAY : Array[Vector2i] = [
 	Vector2i(1920, 1080), # Program was natively built for this resolution
 	Vector2i(2560, 1440), # 
 	Vector2i(3840, 2160), # Just gives a lot of blank space
->>>>>>> 9276dc2cb6eb348ad467a4d7080d00437785b8c1
 ]
 
 const WINDOW_MODE_ARRAY : Array[String] = [
@@ -53,12 +46,9 @@ func set_window_mode(index : int) -> void:
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
 		_:
 			pass
-<<<<<<< HEAD
-=======
 
 
 ## Return the scale for a viewport based on the default and currently selected resolution
 func get_viewport_scale() -> Vector2:
 	var current_resolution := (RESOLUTION_ARRAY[Global.settings["resolution"]] as Vector2);
 	return current_resolution / (default_resolution as Vector2);
->>>>>>> 9276dc2cb6eb348ad467a4d7080d00437785b8c1
