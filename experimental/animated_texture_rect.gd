@@ -9,11 +9,19 @@ class_name  AnimatedTextureRect extends TextureRect
 @export var animation : String = "default":
 	get: return animation;
 	set(value):
+		if !sprite_frames.has_animation(value):
+			printerr("SpriteFrame does not have the given animation!");
+			return;
 		animation = value;
+		frame = 0;
 		texture = sprite_frames.get_frame_texture(animation, frame);
 @export var frame : int = 0:
 	get: return frame;
 	set(value):
+		if sprite_frames.get_frame_count(animation) < 1:
+			printerr("SpriteFrame does not have any frames");
+			return;
+		frame = value;
 		if frame >= sprite_frames.get_frame_count(animation):
 			if !looping: stop();
 			frame = 0;
@@ -39,7 +47,6 @@ func _ready() -> void:
 
 func _process(delta) -> void:
 	if sprite_frames != null && playing:
-		assert(sprite_frames.has_animation(animation));
 		frame_delta += speed_scale * delta;
 		if frame_delta >= refresh_rate / fps: next_frame();
 
