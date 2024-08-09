@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3y8puv62ttr7"]
+[gd_scene load_steps=10 format=3 uid="uid://d3y8puv62ttr7"]
 
 [ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassette_player.png" id="1_q7bm5"]
 [ext_resource type="Script" path="res://objects/cassette_player.gd" id="1_sokl1"]
-[ext_resource type="AudioStream" uid="uid://btqt7gvuvj2m8" path="res://_placeholder/mogu_mogu_music_box.mp3" id="2_gioj2"]
-[ext_resource type="AudioStream" uid="uid://58tslom03o6u" path="res://audio/sound_effects/cassette_tape_button.mp3" id="4_p1dmm"]
+[ext_resource type="AudioStream" uid="uid://dh8ial3m4pgex" path="res://audio/music/mogu_mogu_music_box.ogg" id="3_x0akr"]
+[ext_resource type="AudioStream" uid="uid://c5qqd20djdfoa" path="res://audio/sound_effects/rewind_cassette_tape.ogg" id="4_3yhnr"]
+[ext_resource type="AudioStream" uid="uid://6s6gggcct7l6" path="res://audio/sound_effects/cassette_tape_button.ogg" id="5_pv8kr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6epe"]
 size = Vector2(183, 89)
@@ -52,11 +53,14 @@ shape = SubResource("RectangleShape2D_rautt")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="CassetteMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_gioj2")
+stream = ExtResource("3_x0akr")
 bus = &"Music"
 
+[node name="CassetteRewind" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3yhnr")
+
 [node name="CassettePlayerButtons" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_p1dmm")
+stream = ExtResource("5_pv8kr")
 bus = &"Sound Effects"
 
 [connection signal="mouse_entered" from="Texture/Cassette" to="." method="_on_cassette_enter"]

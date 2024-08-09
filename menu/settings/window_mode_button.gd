@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func add_window_mode_items() -> void:
 	for window_mode in Global.display_manager.WINDOW_MODE_ARRAY:
-		option_button.add_item(window_mode);
+		option_button.add_item(tr(window_mode));
 
 
 func on_window_mode_selected(index : int) -> void:

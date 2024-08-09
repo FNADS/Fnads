@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dewp33mtaave7"]
 
-[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_regular.ttf" id="1_splur"]
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="1_splur"]
 
 [resource]
 Label/colors/font_color = Color(1, 1, 1, 1)

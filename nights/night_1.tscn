@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqe2ldrc3l47k" path="res://menu/lvl_btn.tscn" id="1_ovp1t"]
 
-[node name="Night 1" type="CanvasLayer"]
+[node name="Night1" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
