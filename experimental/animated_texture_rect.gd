@@ -52,7 +52,7 @@ func _process(delta) -> void:
 
 
 func next_frame() -> void:
-	frame = frame + 1;
+	frame += 1;
 	refresh_rate = sprite_frames.get_frame_duration(animation, frame);
 	frame_delta = 0;
 
