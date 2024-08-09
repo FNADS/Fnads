@@ -14,9 +14,7 @@ const RESOLUTION_ARRAY : Array[Vector2i] = [
 
 const WINDOW_MODE_ARRAY : Array[String] = [
 	"FULLSCREEN",
-	"WINDOWED_MODE",
-	"BORDERLESS_WINDOW",
-	"BORDERLESS_FULLSCREEN"
+	"WINDOWED"
 ]
 
 

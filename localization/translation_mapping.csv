@@ -10,6 +10,4 @@ SFX_VOLUME,SFX Volume,Geräuschlautstärke
 DISPLAY_MODE,Display Mode,Fenster Modus
 RESOLUTION,Resolution,Bildschirm Auflösung
 FULLSCREEN,Fullscreen,Vollbildmodus
-WINDOWED_MODE,Windowed Mode,Fenstermodus
-BORDERLESS_WINDOW,Borderless Window,Randloser Fenstermodus
-BORDERLESS_FULLSCREEN,Borderless Fullscreen,Randloser Vollbildmodus
+WINDOWED,Windowed Mode,Fenstermodus

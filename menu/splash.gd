@@ -3,7 +3,7 @@ extends CanvasLayer
 # Comment to make git recognize the file rename
 
 @onready var godot := $Godot as TextureRect
-@onready var minawan_prod := $Minawan_Productions as TextureRect
+@onready var minawan_prod := $MinawanProductions as TextureRect
 @onready var yippee := $Yippee as AudioStreamPlayer
 
 func _ready() -> void:

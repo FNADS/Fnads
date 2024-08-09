@@ -11,7 +11,13 @@ class_name  AnimatedTextureRect extends TextureRect
 	set(value):
 		animation = value;
 		texture = sprite_frames.get_frame_texture(animation, frame);
-@export var frame : int = 0;
+@export var frame : int = 0:
+	get: return frame;
+	set(value):
+		if frame >= sprite_frames.get_frame_count(animation):
+			if !looping: stop();
+			frame = 0;
+		texture = sprite_frames.get_frame_texture(animation, frame);
 @export_range(0 , 100, 0.001, "or_greater") var speed_scale : float = 1;
 @export var auto_play : bool = false;
 @export var looping : bool = false;
@@ -25,7 +31,7 @@ var frame_delta : float = 0;
 func _on_spriteframes_change() -> void:
 	if sprite_frames.has_animation(animation) && sprite_frames.get_frame_count(animation) >= 1:
 		texture = sprite_frames.get_frame_texture(animation, frame);
-		
+
 
 func _ready() -> void:
 	if auto_play: play();
@@ -35,18 +41,14 @@ func _process(delta) -> void:
 	if sprite_frames != null && playing:
 		assert(sprite_frames.has_animation(animation));
 		frame_delta += speed_scale * delta;
-		if frame_delta >= refresh_rate / fps: texture = get_next_frame();
+		if frame_delta >= refresh_rate / fps: next_frame();
 
 
-func get_next_frame() -> Texture2D:
+func next_frame() -> void:
 	frame += 1;
-	if frame >= sprite_frames.get_frame_count(animation):
-		if (looping): frame = 0;
-		else: stop();
 	refresh_rate = sprite_frames.get_frame_duration(animation, frame);
 	frame_delta = 0;
-	return sprite_frames.get_frame_texture(animation, frame);
-	
+
 
 ## Plays the animation with key name.[br]
 ## If this method is called with no name parameter it will play the current selected animation again.[br]

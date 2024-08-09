@@ -17,4 +17,4 @@ func add_resolution_items() -> void:
 
 
 func on_resolution_selected(index : int) -> void:
-	Global.display_manager.set_window_resolution(index); # This kinda sucks for scaling, match statements would be much better
+	Global.display_manager.set_window_resolution(index);

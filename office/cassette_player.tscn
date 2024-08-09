@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d3y8puv62ttr7"]
 
 [ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassette_player.png" id="1_q7bm5"]
-[ext_resource type="Script" path="res://objects/cassette_player.gd" id="1_sokl1"]
+[ext_resource type="Script" path="res://office/cassette_player.gd" id="1_sokl1"]
 [ext_resource type="AudioStream" uid="uid://dh8ial3m4pgex" path="res://audio/music/mogu_mogu_music_box.ogg" id="3_x0akr"]
 [ext_resource type="AudioStream" uid="uid://c5qqd20djdfoa" path="res://audio/sound_effects/rewind_cassette_tape.ogg" id="4_3yhnr"]
 [ext_resource type="AudioStream" uid="uid://6s6gggcct7l6" path="res://audio/sound_effects/cassette_tape_button.ogg" id="5_pv8kr"]
