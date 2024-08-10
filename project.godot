@@ -11,19 +11,20 @@ config_version=5
 [application]
 
 config/name="FNAF Restructured"
-run/main_scene="res://menu/splash.tscn"
+run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/show_image=false
 boot_splash/fullsize=false
-boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="res://audio/default_buses.tres"
+buses/default_bus_layout="res://audio/Default_Buses.tres"
 
 [autoload]
 
+Splash="*res://menu/splash.tscn"
 Global="*res://global.gd"
 
 [display]
@@ -33,23 +34,15 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
-[dotnet]
-
-project/assembly_name="FNAF Restructured"
-
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
-[input]
+[editor_plugins]
 
-LEFT_CLICK={
-"deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
-]
-}
+enabled=PackedStringArray("res://addons/line_up_tool/plugin.cfg", "res://addons/worktime_stopwatch/plugin.cfg")
 
-[internationalization]
+[rendering]
 
-locale/translations=PackedStringArray("res://localization/translation_mapping.de.translation", "res://localization/translation_mapping.en.translation")
+renderer/rendering_method="mobile"

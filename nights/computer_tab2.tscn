@@ -1,0 +1,224 @@
+[gd_scene load_steps=23 format=3 uid="uid://b8vbw6wjq4or3"]
+
+[ext_resource type="Texture2D" uid="uid://b0dcx8ax86sit" path="res://assets/menu/cam_map/cam_map_outline.png" id="1_00hmh"]
+[ext_resource type="Script" path="res://nights/cam_tab.gd" id="1_4rt1u"]
+[ext_resource type="PackedScene" uid="uid://diyu8gvkusnmh" path="res://nights/cam_button1.tscn" id="2_uiyg3"]
+[ext_resource type="PackedScene" uid="uid://c58i1dabs3mf7" path="res://nights/computer_tabs.tscn" id="2_uqfd0"]
+[ext_resource type="Script" path="res://assets/experimental/animated_texture_rect.gd" id="3_aj344"]
+[ext_resource type="Texture2D" uid="uid://sn0slseykb0l" path="res://icon.svg" id="3_hjco7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rf5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hjco7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkt0n"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_p4lot"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_cx8jr"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ux73h"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_3aml3"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_xpdjh"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_y28n0"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_17pbn"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ks4lx"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ru6vy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgy6q"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ue26c"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_7p074"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_v1i4a"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_1qc4s"]
+
+[node name="CameraTab" type="CanvasLayer"]
+script = ExtResource("1_4rt1u")
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_hjco7")
+script = ExtResource("3_aj344")
+sprite_frames = SubResource("SpriteFrames_1rf5w")
+
+[node name="tabs" parent="." instance=ExtResource("2_uqfd0")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1151.0
+offset_top = 540.0
+offset_right = 1976.0
+offset_bottom = 1080.0
+texture = ExtResource("1_00hmh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CamButtonButton0" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 283.0
+offset_right = 278.0
+offset_bottom = 326.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_p4lot")
+button_text = "Art"
+
+[node name="CamButtonButton1" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 160.0
+offset_right = 368.0
+offset_bottom = 200.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_cx8jr")
+button_text = "C1"
+
+[node name="CamButtonButton2" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 160.0
+offset_right = 586.0
+offset_bottom = 200.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_ux73h")
+button_text = "C2"
+
+[node name="CamButtonButton3" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 207.0
+offset_right = 368.0
+offset_bottom = 247.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_3aml3")
+button_text = "C3"
+
+[node name="CamButtonButton4" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 207.0
+offset_right = 586.0
+offset_bottom = 247.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_xpdjh")
+button_text = "C4"
+
+[node name="CamButtonButton5" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 74.0
+offset_right = 278.0
+offset_bottom = 117.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_y28n0")
+button_text = "Cafe"
+use_size_override = true
+button_text_size_override = 27
+
+[node name="CamButtonButton6" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 186.0
+offset_right = 300.0
+offset_bottom = 226.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_17pbn")
+button_text = "Hall2"
+use_size_override = true
+button_text_size_override = 27
+
+[node name="CamButtonButton7" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 16.0
+offset_right = 473.0
+offset_bottom = 56.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_ks4lx")
+button_text = "Hall 1"
+use_size_override = true
+button_text_size_override = 25
+
+[node name="CamButtonButton8" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 317.0
+offset_right = 473.0
+offset_bottom = 353.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vkt0n")
+button_group = SubResource("ButtonGroup_ru6vy")
+button_text = "Hall3"
+use_size_override = true
+button_text_size_override = 25
+use_x_override = true
+button_text_x_override = 2.255
+use_y_override = true
+button_text_y_override = 1.3
+
+[node name="CamButtonButton9" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 697.0
+offset_top = 284.0
+offset_right = 754.0
+offset_bottom = 324.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgy6q")
+button_group = SubResource("ButtonGroup_ue26c")
+button_text = "Gym"
+use_size_override = true
+button_text_size_override = 29
+
+[node name="CamButtonButton10" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 411.0
+offset_right = 207.0
+offset_bottom = 448.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgy6q")
+button_group = SubResource("ButtonGroup_7p074")
+button_text = "JC"
+use_size_override = true
+button_text_size_override = 29
+
+[node name="CamButtonButton11" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 479.0
+offset_right = 325.0
+offset_bottom = 519.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgy6q")
+button_group = SubResource("ButtonGroup_v1i4a")
+button_text = "Vent"
+use_size_override = true
+button_text_size_override = 29
+
+[node name="CamButtonButton12" parent="TextureRect" instance=ExtResource("2_uiyg3")]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 439.0
+offset_right = 647.0
+offset_bottom = 479.0
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgy6q")
+button_group = SubResource("ButtonGroup_1qc4s")
+button_text = "Staff"
+use_size_override = true
+button_text_size_override = 21

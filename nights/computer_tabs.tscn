@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://c58i1dabs3mf7"]
+
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="1_8pekt"]
+[ext_resource type="Script" path="res://nights/tabs.gd" id="1_qjl03"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyxvl"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="tabs" type="Control" node_paths=PackedStringArray("button1", "button2", "button3")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qjl03")
+button1 = NodePath("HBoxContainer/tab1")
+button2 = NodePath("HBoxContainer/tab2")
+button3 = NodePath("HBoxContainer/tab3")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 155.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fyxvl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1613.0
+offset_bottom = 165.0
+scale = Vector2(1.19, 0.94)
+theme_override_constants/separation = 180
+alignment = 1
+
+[node name="tab1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8pekt")
+text = "TAB WAN"
+
+[node name="tab2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8pekt")
+text = "TAB WAN"
+
+[node name="tab3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8pekt")
+text = "TAB WAN"
+
+[connection signal="pressed" from="HBoxContainer/tab1" to="." method="_on_tab_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/tab2" to="." method="_on_tab_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/tab3" to="." method="_on_tab_3_pressed"]

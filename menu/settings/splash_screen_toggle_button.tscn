@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://la5jv6gnaxnl"]
+
+[ext_resource type="Script" path="res://menu/settings/splash_screen_toggle_button.gd" id="1_d724r"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="2_v6u2y"]
+
+[node name="Splash_Screen_Toggle_Button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 44.0
+offset_right = -1920.0
+offset_bottom = -1036.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d724r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.34
+anchor_right = 0.002
+anchor_bottom = 0.34
+offset_left = 0.16
+offset_top = -0.200012
+offset_right = 773.16
+offset_bottom = 59.8
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_v6u2y")
+theme_override_constants/h_separation = 15
+theme_override_constants/outline_size = 13
+button_pressed = true
+text = "Starting Splash Screen"
+alignment = 2
+expand_icon = true
+
+[connection signal="toggled" from="HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]

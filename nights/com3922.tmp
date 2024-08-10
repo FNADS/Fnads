@@ -1,0 +1,94 @@
+[gd_scene load_steps=20 format=3 uid="uid://b8vbw6wjq4or3"]
+
+[ext_resource type="PackedScene" uid="uid://c58i1dabs3mf7" path="res://nights/computer_tabs.tscn" id="1_nm5lr"]
+[ext_resource type="Texture2D" uid="uid://d21i1mtfetc6d" path="res://assets/menu/cam_map/cam_map_1.png" id="2_woj1p"]
+[ext_resource type="Texture2D" uid="uid://c1u270u48b8a2" path="res://assets/menu/cam_map/cam_map_2.png" id="3_w8aki"]
+[ext_resource type="Texture2D" uid="uid://c71nsif70ur4m" path="res://assets/menu/cam_map/cam_map_3.png" id="4_dlue2"]
+[ext_resource type="Texture2D" uid="uid://d3gax7fjder0f" path="res://assets/menu/cam_map/cam_map_4.png" id="5_ow50x"]
+[ext_resource type="Texture2D" uid="uid://bivhkpummtn3s" path="res://assets/menu/cam_map/cam_map_5.png" id="6_8aisy"]
+[ext_resource type="Texture2D" uid="uid://bx6nxgioyqrv" path="res://assets/menu/cam_map/cam_map_6.png" id="7_xfr5x"]
+[ext_resource type="Texture2D" uid="uid://b4d0wyl2ggiie" path="res://assets/menu/cam_map/cam_map_7.png" id="8_kj8t3"]
+[ext_resource type="Texture2D" uid="uid://bildb0liqad87" path="res://assets/menu/cam_map/cam_map_8.png" id="9_5v47l"]
+[ext_resource type="Texture2D" uid="uid://0jb8npu6iksk" path="res://assets/menu/cam_map/cam_map_9.png" id="10_c547b"]
+[ext_resource type="Texture2D" uid="uid://djcxhw8b2mb85" path="res://assets/menu/cam_map/cam_map_11.png" id="11_3x26c"]
+[ext_resource type="Texture2D" uid="uid://dhleuxpttb6yh" path="res://assets/menu/cam_map/cam_map_10.png" id="12_f4ytu"]
+[ext_resource type="Texture2D" uid="uid://d4nathg0252p2" path="res://assets/menu/cam_map/cam_map_12.png" id="13_13cpe"]
+[ext_resource type="Texture2D" uid="uid://cnww32riox43m" path="res://assets/menu/cam_map/cam_map_13.png" id="14_8t12x"]
+[ext_resource type="Texture2D" uid="uid://0bc30rrhotdb" path="res://assets/menu/cam_map/cam_map_14.png" id="15_7r057"]
+[ext_resource type="Texture2D" uid="uid://oarbs0yk4hvm" path="res://assets/menu/cam_map/cam_map_16.png" id="16_2jnue"]
+[ext_resource type="Texture2D" uid="uid://brlqloyvc1fe0" path="res://assets/menu/cam_map/cam_map_15.png" id="17_qfbdo"]
+[ext_resource type="Script" path="res://nights/cam_map.gd" id="18_ifcwo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g7ot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_woj1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w8aki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dlue2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ow50x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8aisy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xfr5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kj8t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5v47l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c547b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3x26c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f4ytu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_13cpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8t12x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7r057")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2jnue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qfbdo")
+}],
+"loop": true,
+"name": &"cam_map",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(958, 540.5)
+scale = Vector2(3.20333, 2.6975)
+sprite_frames = SubResource("SpriteFrames_2g7ot")
+animation = &"cam_map"
+script = ExtResource("18_ifcwo")
+
+[node name="Button" type="Button" parent="AnimatedSprite2D"]
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+flat = true
+
+[node name="Control" parent="." instance=ExtResource("1_nm5lr")]

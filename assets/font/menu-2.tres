@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://c3wy3kpvtyhlf"]
 
-[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="1_qb3kh"]
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly.ttf" id="1_qb3kh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx1u4"]
 

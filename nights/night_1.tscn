@@ -1,10 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmfii244fski3"]
+[gd_scene load_steps=9 format=3 uid="uid://dmfii244fski3"]
 
+[ext_resource type="Script" path="res://nights/night_1.gd" id="1_2i7wo"]
 [ext_resource type="PackedScene" uid="uid://dqe2ldrc3l47k" path="res://menu/lvl_btn.tscn" id="1_ovp1t"]
+[ext_resource type="PackedScene" uid="uid://ddm5s05j62em4" path="res://nights/time_manager.tscn" id="2_v7ajy"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="4_xunqg"]
+[ext_resource type="PackedScene" uid="uid://c58i1dabs3mf7" path="res://nights/computer_tabs.tscn" id="5_m5yqt"]
+[ext_resource type="PackedScene" uid="uid://ohyvtohaejq" path="res://nights/computer_tab1.tscn" id="5_mjh2q"]
+[ext_resource type="PackedScene" uid="uid://b8vbw6wjq4or3" path="res://nights/computer_tab2.tscn" id="6_agxqd"]
+[ext_resource type="PackedScene" uid="uid://b6ddkxa72q320" path="res://nights/computer_tab3.tscn" id="7_pjrh7"]
 
-[node name="Night1" type="CanvasLayer"]
+[node name="Night 1" type="Control" node_paths=PackedStringArray("label", "pc_tab1", "pc_tab2", "pc_tab3", "tabs")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2i7wo")
+label = NodePath("ColorRect/time_label")
+pc_tab1 = NodePath("CanvasLayer")
+pc_tab2 = NodePath("CameraTab")
+pc_tab3 = NodePath("CanvasLayer2")
+tabs = NodePath("tabs")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,24 +33,34 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="time_manager" parent="ColorRect" instance=ExtResource("2_v7ajy")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -237.0
-offset_top = -27.0
-offset_right = -145.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Placeholder"
 
-[node name="Back" parent="." instance=ExtResource("1_ovp1t")]
+[node name="time_label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1692.0
+offset_top = 3.0
+offset_right = 1910.0
+offset_bottom = 70.0
+theme = ExtResource("4_xunqg")
+text = "(time)"
+horizontal_alignment = 2
+
+[node name="lvl_btn" parent="ColorRect" instance=ExtResource("1_ovp1t")]
+layout_mode = 1
+offset_left = -214.0
+offset_top = -62.0
+offset_right = 186.0
+offset_bottom = 69.0
 level_path = "res://menu/level_select_screen.tscn"
 
-[node name="Back" parent="Back" instance=ExtResource("1_ovp1t")]
+[node name="CanvasLayer" parent="." instance=ExtResource("5_mjh2q")]
+
+[node name="CameraTab" parent="." instance=ExtResource("6_agxqd")]
+visible = false
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("7_pjrh7")]
+visible = false
+
+[node name="tabs" parent="." instance=ExtResource("5_m5yqt")]
 layout_mode = 1
-level_path = "res://menu/level_select_screen.tscn"

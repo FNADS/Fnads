@@ -1,119 +1,128 @@
-[gd_scene load_steps=9 format=3 uid="uid://celpcwdhg77cd"]
+[gd_scene load_steps=10 format=3 uid="uid://celpcwdhg77cd"]
 
-[ext_resource type="Script" path="res://menu/settings/options_menu.gd" id="1_tvkaf"]
-[ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_e58ah"]
-[ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://assets/font/multi-1.tres" id="3_yxhq0"]
-[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="4_2pcel"]
-[ext_resource type="PackedScene" uid="uid://p8kdoop86n7m" path="res://menu/settings/volume_slider.tscn" id="5_5nali"]
-[ext_resource type="PackedScene" uid="uid://dfxobmsgcqsjy" path="res://menu/settings/window_mode_button.tscn" id="6_1t8mh"]
-[ext_resource type="PackedScene" uid="uid://bbmdv2arhaosv" path="res://menu/settings/resolution_mode_button.tscn" id="7_juw5m"]
-[ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="8_0fyha"]
+[ext_resource type="Script" path="res://menu/settings/options_menu.gd" id="1_nx260"]
+[ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_5mioa"]
+[ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://assets/font/multi-1.tres" id="3_fk72m"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="4_cd7o7"]
+[ext_resource type="PackedScene" uid="uid://p8kdoop86n7m" path="res://menu/settings/volume_slider.tscn" id="5_bhgmc"]
+[ext_resource type="PackedScene" uid="uid://dfxobmsgcqsjy" path="res://menu/settings/window_mode_button.tscn" id="6_agagc"]
+[ext_resource type="PackedScene" uid="uid://bbmdv2arhaosv" path="res://menu/settings/resolution_mode_button.tscn" id="7_jrilo"]
+[ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="8_bep3g"]
+[ext_resource type="PackedScene" uid="uid://la5jv6gnaxnl" path="res://menu/settings/splash_screen_toggle_button.tscn" id="9_063t7"]
 
-[node name="Menu" type="CanvasLayer"]
-script = ExtResource("1_tvkaf")
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nx260")
 
 [node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_e58ah")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_5mioa")
 
-[node name="Settings Elements" type="HSplitContainer" parent="Background"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -810.0
-offset_top = -440.0
-offset_right = 810.0
-offset_bottom = 340.0
-grow_horizontal = 2
-grow_vertical = 2
-split_offset = 700
-
-[node name="Settings Options" type="PanelContainer" parent="Background/Settings Elements"]
-layout_mode = 2
-theme = ExtResource("3_yxhq0")
-
-[node name="Volume" type="VBoxContainer" parent="Background/Settings Elements/Settings Options"]
-layout_mode = 2
-theme = ExtResource("3_yxhq0")
-
-[node name="Master_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
-layout_mode = 2
-theme = ExtResource("4_2pcel")
-text = "MASTER_VOLUME"
-horizontal_alignment = 1
-
-[node name="Master" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
-layout_mode = 2
-theme = ExtResource("3_yxhq0")
-bus_name = "Master"
-
-[node name="Music_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
-layout_mode = 2
-theme = ExtResource("4_2pcel")
-text = "MUSIC_VOLUME"
-horizontal_alignment = 1
-
-[node name="Music" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
-layout_mode = 2
-theme = ExtResource("3_yxhq0")
-bus_name = "Music"
-
-[node name="Sound Effects_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
-layout_mode = 2
-theme = ExtResource("4_2pcel")
-text = "SFX_VOLUME"
-horizontal_alignment = 1
-
-[node name="Sound Effects" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
-layout_mode = 2
-theme = ExtResource("3_yxhq0")
-bus_name = "Sound Effects"
-
-[node name="PanelContainer" type="PanelContainer" parent="Background/Settings Elements"]
-layout_mode = 2
-theme = ExtResource("3_yxhq0")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Background/Settings Elements/PanelContainer"]
-clip_contents = false
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/Settings Elements/PanelContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="WindowModeButton" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_1t8mh")]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ResolutionModeButton" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_juw5m")]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Back" type="Button" parent="Background"]
+[node name="Back" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -490.0
-offset_top = -160.0
-offset_right = 490.0
-offset_bottom = -50.0
+offset_left = 470.0
+offset_top = 920.0
+offset_right = 1450.0
+offset_bottom = 1030.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-theme = ExtResource("8_0fyha")
+mouse_default_cursor_shape = 2
+theme = ExtResource("8_bep3g")
 action_mode = 0
-text = "RETURN"
+text = "Return"
 flat = true
 
-[connection signal="pressed" from="Background/Back" to="." method="_on_back_pressed"]
+[node name="Settings Elements" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 1770.0
+offset_bottom = 880.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 700
+dragger_visibility = 1
+
+[node name="Settings Options" type="PanelContainer" parent="Settings Elements"]
+layout_mode = 2
+theme = ExtResource("3_fk72m")
+
+[node name="Volume" type="VBoxContainer" parent="Settings Elements/Settings Options"]
+layout_mode = 2
+theme = ExtResource("3_fk72m")
+
+[node name="Master_label" type="Label" parent="Settings Elements/Settings Options/Volume"]
+layout_mode = 2
+theme = ExtResource("4_cd7o7")
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="Master" parent="Settings Elements/Settings Options/Volume" instance=ExtResource("5_bhgmc")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_fk72m")
+bus_name = "Master"
+
+[node name="Music_label" type="Label" parent="Settings Elements/Settings Options/Volume"]
+layout_mode = 2
+theme = ExtResource("4_cd7o7")
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="Music" parent="Settings Elements/Settings Options/Volume" instance=ExtResource("5_bhgmc")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_fk72m")
+bus_name = "Music"
+
+[node name="Sound Effects_label" type="Label" parent="Settings Elements/Settings Options/Volume"]
+layout_mode = 2
+theme = ExtResource("4_cd7o7")
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="Sound Effects" parent="Settings Elements/Settings Options/Volume" instance=ExtResource("5_bhgmc")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_fk72m")
+bus_name = "Sound Effects"
+
+[node name="Splash_Screen_Toggle_Button" parent="Settings Elements/Settings Options/Volume" instance=ExtResource("9_063t7")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings Elements"]
+layout_mode = 2
+theme = ExtResource("3_fk72m")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Settings Elements/PanelContainer"]
+clip_contents = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings Elements/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Window_Mode_Button" parent="Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_agagc")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Resolution_Mode_Button" parent="Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_jrilo")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

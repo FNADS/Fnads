@@ -1,22 +1,24 @@
 extends CanvasLayer
 
-# Comment to make git recognize the file rename
+signal on_transition_finished
 
-@onready var godot := $Godot as TextureRect
-@onready var minawan_prod := $MinawanProductions as TextureRect
-@onready var yippee := $Yippee as AudioStreamPlayer
+@onready var black_screen = $Black_Screen
+@onready var splash_fade = $Splash_Fade
 
-func _ready() -> void:
-	var tween = create_tween();
+func _ready():
+	black_screen.visible = false
+	splash_fade.animation_finished.connect(_on_animation_finished)
+
+func _on_animation_finished(_anim):
+	emit_signal("on_transition_finished")
+	hide()
 	
-	if (Global.settings["show_splash_screen"]):
-		tween.tween_property(godot, "modulate:a", 1, 1.1);
-		tween.tween_property(godot, "modulate:a", 0, 1.1);
-		tween.tween_callback(Callable(yippee, "play"));
-		tween.tween_property(minawan_prod, "modulate:a", 1, 1.1);
-		tween.tween_property(minawan_prod, "modulate:a", 0, 1.1);
-		
-	tween.tween_callback(Callable(self, "goto_main_menu"));
-	
-	
-func goto_main_menu() -> void: get_tree().change_scene_to_file("res://menu/menu.tscn");
+
+func transition():
+	if Global.splash_has_played:
+		emit_signal("on_transition_finished")
+	else:
+		Global.splash_has_played = true
+		black_screen.visible = true
+		splash_fade.play("Splash_Animation")
+		show()  # Ensure the splash screen is visible

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://diyu8gvkusnmh"]
+
+[ext_resource type="Script" path="res://nights/cam_buttons.gd" id="1_5ofx5"]
+
+[node name="CamButton1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1819.0
+offset_bottom = -1011.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ofx5")
+
+[node name="CamButtonButton" type="Button" parent="."]
+offset_right = 101.0
+offset_bottom = 69.0
+mouse_default_cursor_shape = 2
+flat = true
+
+[connection signal="pressed" from="CamButtonButton" to="." method="_on_cam_button_button_pressed"]

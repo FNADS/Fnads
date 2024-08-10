@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://diyu8gvkusnmh"]
+
+[ext_resource type="Script" path="res://nights/cam_buttons.gd" id="1_5ofx5"]
+[ext_resource type="Texture2D" uid="uid://bse6ylch6r6d6" path="res://assets/menu/cam_map/cam_button_enabled.png" id="2_j6n08"]
+[ext_resource type="Texture2D" uid="uid://cx1mrlj3l43fr" path="res://assets/menu/cam_map/cam_button.png" id="2_qd3ac"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="3_ev2bw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5scj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61cs0"]
+
+[node name="CamButtonButton0" type="Button" node_paths=PackedStringArray("button_enabled_sprite", "button_disabled_sprite", "button_label")]
+offset_right = 64.0
+offset_bottom = 45.0
+mouse_default_cursor_shape = 2
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k5scj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_61cs0")
+toggle_mode = true
+flat = true
+script = ExtResource("1_5ofx5")
+button_enabled_sprite = NodePath("enabled")
+button_disabled_sprite = NodePath("disabled")
+button_label = NodePath("Label")
+
+[node name="enabled" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j6n08")
+expand_mode = 1
+
+[node name="disabled" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qd3ac")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -39.0
+offset_right = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_ev2bw")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

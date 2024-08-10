@@ -6,15 +6,26 @@ extends Control
 
 @onready var option_button = $HBoxContainer/OptionButton as OptionButton
 
-func _ready() -> void:
-	add_resolution_items();
-	option_button.select(Global.settings["resolution"]);
-
+const RESOLUTION_DICTIONARY : Dictionary = {
+	"1920 x 1080" : Vector2i(1920, 1080), # Program was natively built for this resolution
+	"3840 x 2160" : Vector2i(3840, 2160), # Just gives a lot of blank space
+	"1280 x 720" : Vector2i(1280, 720) # Doesn't really work all that well
+}
+func _process(_delta):
+	if DisplayServer.window_get_mode() == 2:
+		option_button.disabled = true
+	else: 
+		option_button.disabled = false
+func _ready():
+	option_button.item_selected.connect(on_resolution_selected)
+	add_resolution_items()
+	for i in RESOLUTION_DICTIONARY.size():
+		if RESOLUTION_DICTIONARY.keys()[i] == RESOLUTION_DICTIONARY.find_key(DisplayServer.window_get_size()):
+			option_button.select(i)
 
 func add_resolution_items() -> void:
-	for resolution_size in Global.display_manager.RESOLUTION_ARRAY:
-		option_button.add_item("%d x %d" % [resolution_size.x, resolution_size.y]);
-
+	for resolution_size_text in RESOLUTION_DICTIONARY:
+		option_button.add_item(resolution_size_text)
 
 func on_resolution_selected(index : int) -> void:
-	Global.display_manager.set_window_resolution(index);
+	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index]) # This kinda sucks for scaling, match statements would be much better
