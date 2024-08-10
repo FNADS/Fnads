@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cycaypga4p7pu"]
+
+[ext_resource type="Script" path="res://death/death_screen.gd" id="1_nn1hv"]
+[ext_resource type="PackedScene" uid="uid://dev1of4ausa3r" path="res://experimental/tv_static_overlay/tv_static.tscn" id="2_ssyd3"]
+[ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/font_title.tres" id="3_5qd6m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6u12"]
+bg_color = Color(0.854902, 0, 0, 0)
+border_width_left = 500
+border_width_top = 500
+border_width_right = 500
+border_width_bottom = 500
+border_color = Color(1, 0, 0, 0.588235)
+border_blend = true
+corner_detail = 10
+
+[node name="DeathScreen" type="CanvasLayer"]
+script = ExtResource("1_nn1hv")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="RedTint" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6u12")
+
+[node name="Label" type="Label" parent="RedTint"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_5qd6m")
+theme_override_font_sizes/font_size = 280
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TvStatic" parent="." instance=ExtResource("2_ssyd3")]

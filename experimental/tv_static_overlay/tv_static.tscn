@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dev1of4ausa3r"]
 
-[ext_resource type="Shader" path="res://experimental/tv_static_overlay/static.gdshader" id="1_wp0qs"]
+[ext_resource type="Shader" path="res://experimental/tv_static_overlay/tv_static.gdshader" id="1_wp0qs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uje5y"]
 shader = ExtResource("1_wp0qs")
-shader_parameter/transparency = 0.8
+shader_parameter/transparency = 1.0
 shader_parameter/jitter_frequenzy = 100.0
 shader_parameter/jitter_amplitude = 5.0
 
@@ -12,17 +12,17 @@ shader_parameter/jitter_amplitude = 5.0
 noise_type = 0
 frequency = 0.08
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_immiy"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wv6bi"]
 seamless = true
 seamless_blend_skirt = 0.0
 noise = SubResource("FastNoiseLite_s3nlk")
 
-[node name="TextureRect" type="TextureRect"]
+[node name="tv_static" type="TextureRect"]
 material = SubResource("ShaderMaterial_uje5y")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("NoiseTexture2D_immiy")
+texture = SubResource("NoiseTexture2D_wv6bi")
 stretch_mode = 1

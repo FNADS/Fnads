@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://c3wy3kpvtyhlf"]
 
-[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="1_qb3kh"]
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="1_fmw0w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx1u4"]
 
@@ -9,9 +9,9 @@ Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 16
 Button/font_sizes/font_size = 142
-Button/fonts/font = ExtResource("1_qb3kh")
+Button/fonts/font = ExtResource("1_fmw0w")
 Button/styles/focus = SubResource("StyleBoxEmpty_bx1u4")
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 8
 Label/font_sizes/font_size = 54
-Label/fonts/font = ExtResource("1_qb3kh")
+Label/fonts/font = ExtResource("1_fmw0w")

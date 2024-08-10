@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="FNAF Restructured"
+config/name="FNADS"
 run/main_scene="res://menu/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [audio]
 
@@ -32,10 +33,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-
-[dotnet]
-
-project/assembly_name="FNAF Restructured"
 
 [editor]
 

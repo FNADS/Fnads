@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://8b1dsr81woxb"]
 
 [ext_resource type="Script" path="res://menu/credits/credits.gd" id="1_26k0h"]
-[ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="2_fjujy"]
+[ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/font_big.tres" id="2_fjujy"]
 [ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_xammh"]
-[ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://assets/font/multi-1.tres" id="3_tj7x6"]
-[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="4_px4ke"]
+[ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://assets/font/font_small.tres" id="3_tj7x6"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/font_mid.tres" id="4_px4ke"]
 [ext_resource type="Theme" uid="uid://b70nvyyqkk63w" path="res://assets/theme/credits_link_button.tres" id="6_sfa05"]
 
 [node name="Credits" type="CanvasLayer"]
