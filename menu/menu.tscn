@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_gmy4w"]
 [ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_wwj7e"]
-[ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/menu-1.tres" id="3_v5ckv"]
-[ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/menu-2.tres" id="4_m4nwl"]
+[ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/font_title.tres" id="3_v5ckv"]
+[ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/font_big.tres" id="4_m4nwl"]
 
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_gmy4w")

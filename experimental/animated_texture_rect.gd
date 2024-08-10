@@ -23,7 +23,7 @@ class_name  AnimatedTextureRect extends TextureRect
 			return;
 		frame = value;
 		if frame >= sprite_frames.get_frame_count(animation):
-			if !looping: stop();
+			if !looping: playing = false;
 			frame = 0;
 		texture = sprite_frames.get_frame_texture(animation, frame);
 @export_range(0 , 100, 0.001, "or_greater") var speed_scale : float = 1;

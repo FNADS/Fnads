@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjvppq41m0yj3"]
 
-[ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/menu-1.tres" id="1_b36et"]
+[ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/font_title.tres" id="1_b36et"]
 [ext_resource type="Script" path="res://experimental/scroll_text/scroll_text.gd" id="2_3ct0s"]
 
 [node name="Experimental" type="Control"]

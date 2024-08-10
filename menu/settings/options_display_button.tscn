@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://defa1h0aimlex"]
 
-[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/menu-3.tres" id="1_2biw4"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/font_mid.tres" id="1_2biw4"]
 
 [node name="OptionsDisplayButton" type="Control"]
 layout_mode = 3
