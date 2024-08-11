@@ -1,8 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5ckvt8xwjnov"]
+[gd_scene load_steps=14 format=3 uid="uid://c5ckvt8xwjnov"]
 
 [ext_resource type="Script" path="res://office/cerber.gd" id="1_b0p40"]
-[ext_resource type="Texture2D" uid="uid://c8kjklwisy48i" path="res://_placeholder/placeholder_cerby_solid.png" id="1_lbjyh"]
+[ext_resource type="Texture2D" uid="uid://5fjgahwtixb5" path="res://_placeholder/cerby_sleep.png" id="2_h88vw"]
+[ext_resource type="Texture2D" uid="uid://2xnsh6xtk8bm" path="res://_placeholder/cerby_waking_up.png" id="3_l3hip"]
 [ext_resource type="Texture2D" uid="uid://1f4epv8ldmsp" path="res://assets/headpat.png" id="3_njvaq"]
+[ext_resource type="Texture2D" uid="uid://3no7gv2m55aa" path="res://_placeholder/cerby_awake.png" id="4_o2652"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pngu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h88vw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l3hip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o2652")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khgii"]
 size = Vector2(218, 94.5)
@@ -53,8 +72,8 @@ animations = [{
 [node name="Cerber" type="Node2D"]
 script = ExtResource("1_b0p40")
 
-[node name="Texture" type="Sprite2D" parent="."]
-texture = ExtResource("1_lbjyh")
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0pngu")
 flip_h = true
 
 [node name="HeadpatHitbox" type="Area2D" parent="Texture"]

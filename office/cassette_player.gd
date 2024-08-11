@@ -6,7 +6,8 @@ const rewind_time : float = 5.0; # The it needs to rewind the whole tape
 
 @onready var music := $CassetteMusic as AudioStreamPlayer2D;
 @onready var rewind := $CassetteRewind as AudioStreamPlayer2D;
-@onready var buttons := $CassettePlayerButtons as AudioStreamPlayer2D;
+@onready var button_in := $CassettePlayerButtonIn as AudioStreamPlayer2D;
+@onready var button_out := $CassettePlayerButtonOut as AudioStreamPlayer2D;
 var music_time : float = 0.0;
 var rewind_step : float; # The time it rewinds each second
 var rewind_tape : bool = false;
@@ -49,16 +50,16 @@ func use_cassette_player() -> void:
 		CASSETTE: pass
 		REWIND:
 			if !music.playing:
-				buttons.play();
+				button_in.play();
 				rewind_tape = true;
 				if (music_time > 0.0): rewind.play();
 		STOP:
-			buttons.play();
+			button_out.play();
 			music_time = music.get_playback_position();
 			music.stop();
 		PLAY:
 			if !music.playing:
-				buttons.play();
+				button_in.play();
 				music.play(music_time);
 
 

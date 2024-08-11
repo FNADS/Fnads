@@ -33,7 +33,6 @@ func load_game() -> bool:
 func load_settings(settings_data: Dictionary) -> void:
 	Global.settings = settings_data;
 	Global.display_manager.set_window_mode(settings_data["window_mode"] as int);
-	Global.display_manager.set_window_resolution(settings_data["resolution"] as int);
 	for i in AudioServer.bus_count:
 		AudioServer.set_bus_volume_db(i, linear_to_db(settings_data["volume"][i] as float));
 		

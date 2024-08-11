@@ -5,12 +5,13 @@ class_name DisplayManager
 const default_resolution := Vector2i(1920, 1080);
 
 
-const RESOLUTION_ARRAY : Array[Vector2i] = [
-	Vector2i(1280, 720),
-	Vector2i(1920, 1080), # Program was natively built for this resolution
-	Vector2i(2560, 1440), 
-	Vector2i(3840, 2160),
-]
+#Deprecated:
+#const RESOLUTION_ARRAY : Array[Vector2i] = [
+	#Vector2i(1280, 720),
+	#Vector2i(1920, 1080), # Program was natively built for this resolution
+	#Vector2i(2560, 1440), 
+	#Vector2i(3840, 2160),
+#]
 
 const WINDOW_MODE_ARRAY : Array[String] = [
 	"FULLSCREEN",
@@ -18,9 +19,10 @@ const WINDOW_MODE_ARRAY : Array[String] = [
 ]
 
 
-func set_window_resolution(index : int) -> void:
-	Global.settings["resolution"] = index;
-	DisplayServer.window_set_size(RESOLUTION_ARRAY[index]);
+#Deprecated:
+#func set_window_resolution(index : int) -> void:
+	#Global.settings["resolution"] = index;
+	#DisplayServer.window_set_size(RESOLUTION_ARRAY[index]);
 
 
 ## [code]0[/code]: Fullscreen[br]
