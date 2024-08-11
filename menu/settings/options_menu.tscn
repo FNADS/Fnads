@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://celpcwdhg77cd"]
+[gd_scene load_steps=8 format=3 uid="uid://celpcwdhg77cd"]
 
 [ext_resource type="Script" path="res://menu/settings/options_menu.gd" id="1_tvkaf"]
 [ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_e58ah"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/font_mid.tres" id="4_2pcel"]
 [ext_resource type="PackedScene" uid="uid://p8kdoop86n7m" path="res://menu/settings/volume_slider.tscn" id="5_5nali"]
 [ext_resource type="PackedScene" uid="uid://dfxobmsgcqsjy" path="res://menu/settings/window_mode_button.tscn" id="6_1t8mh"]
-[ext_resource type="PackedScene" uid="uid://bbmdv2arhaosv" path="res://menu/settings/resolution_mode_button.tscn" id="7_juw5m"]
 [ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/font_big.tres" id="8_0fyha"]
 
 [node name="Menu" type="CanvasLayer"]
@@ -90,10 +89,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="WindowModeButton" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_1t8mh")]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ResolutionModeButton" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_juw5m")]
 layout_mode = 2
 size_flags_vertical = 3
 

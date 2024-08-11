@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iw243ve68gys"
-path="res://.godot/imported/placeholder_cerby_squiggly.png-43ee02c5aeac7d13c7f4c387a702b578.ctex"
+uid="uid://2xnsh6xtk8bm"
+path="res://.godot/imported/cerby_waking_up.png-fb5cf7321de3ef9079c6eefc6afcaefb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_placeholder/placeholder_cerby_squiggly.png"
-dest_files=["res://.godot/imported/placeholder_cerby_squiggly.png-43ee02c5aeac7d13c7f4c387a702b578.ctex"]
+source_file="res://_placeholder/cerby_waking_up.png"
+dest_files=["res://.godot/imported/cerby_waking_up.png-fb5cf7321de3ef9079c6eefc6afcaefb.ctex"]
 
 [params]
 

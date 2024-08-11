@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3y8puv62ttr7"]
+[gd_scene load_steps=11 format=3 uid="uid://d3y8puv62ttr7"]
 
 [ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassette_player.png" id="1_q7bm5"]
 [ext_resource type="Script" path="res://office/cassette_player.gd" id="1_sokl1"]
 [ext_resource type="AudioStream" uid="uid://dh8ial3m4pgex" path="res://audio/music/mogu_mogu_music_box.ogg" id="3_x0akr"]
 [ext_resource type="AudioStream" uid="uid://c5qqd20djdfoa" path="res://audio/sound_effects/rewind_cassette_tape.ogg" id="4_3yhnr"]
-[ext_resource type="AudioStream" uid="uid://6s6gggcct7l6" path="res://audio/sound_effects/cassette_tape_button.ogg" id="5_pv8kr"]
+[ext_resource type="AudioStream" uid="uid://6oxqei6iomis" path="res://audio/sound_effects/cassette_player_button_in.ogg" id="5_q052q"]
+[ext_resource type="AudioStream" uid="uid://depp2hue76j3j" path="res://audio/sound_effects/cassette_player_button_out.ogg" id="6_2okhb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6epe"]
 size = Vector2(183, 89)
@@ -59,8 +60,12 @@ bus = &"Music"
 [node name="CassetteRewind" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_3yhnr")
 
-[node name="CassettePlayerButtons" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_pv8kr")
+[node name="CassettePlayerButtonIn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_q052q")
+bus = &"Sound Effects"
+
+[node name="CassettePlayerButtonOut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2okhb")
 bus = &"Sound Effects"
 
 [connection signal="mouse_entered" from="Texture/Cassette" to="." method="_on_cassette_enter"]
@@ -71,4 +76,3 @@ bus = &"Sound Effects"
 [connection signal="mouse_exited" from="Texture/Stop" to="." method="_on_mouse_exit_any"]
 [connection signal="mouse_entered" from="Texture/Play" to="." method="_on_play_enter"]
 [connection signal="mouse_exited" from="Texture/Play" to="." method="_on_mouse_exit_any"]
-[connection signal="finished" from="CassettePlayerButtons" to="." method="_on_music_finish"]
