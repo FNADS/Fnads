@@ -76,3 +76,4 @@ bus = &"Sound Effects"
 [connection signal="mouse_exited" from="Texture/Stop" to="." method="_on_mouse_exit_any"]
 [connection signal="mouse_entered" from="Texture/Play" to="." method="_on_play_enter"]
 [connection signal="mouse_exited" from="Texture/Play" to="." method="_on_mouse_exit_any"]
+[connection signal="finished" from="CassetteMusic" to="." method="_on_music_finished"]

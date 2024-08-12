@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bqo6uh04me6mv"]
+
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="1_g06jh"]
+[ext_resource type="StyleBox" uid="uid://dnxq6i10w2kw1" path="res://nights/cam_button_unselected.tres" id="2_bs1cc"]
+[ext_resource type="StyleBox" uid="uid://dvu071qf0d407" path="res://nights/cam_button_selected.tres" id="3_p21rr"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 13
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_g06jh")
+Button/styles/disabled = ExtResource("3_p21rr")
+Button/styles/focus = ExtResource("2_bs1cc")
+Button/styles/hover = ExtResource("2_bs1cc")
+Button/styles/normal = ExtResource("2_bs1cc")
+Button/styles/pressed = ExtResource("3_p21rr")

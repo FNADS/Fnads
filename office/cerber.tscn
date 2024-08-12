@@ -66,7 +66,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 20.0
+"speed": 10.0
 }]
 
 [node name="Cerber" type="Node2D"]
@@ -83,10 +83,10 @@ position = Vector2(-44, -69.25)
 shape = SubResource("RectangleShape2D_khgii")
 
 [node name="Headpat" type="AnimatedSprite2D" parent="Texture"]
-visible = false
 position = Vector2(-50, -71)
 scale = Vector2(1.1472, 1.1472)
 sprite_frames = SubResource("SpriteFrames_a4doy")
 
 [connection signal="mouse_entered" from="Texture/HeadpatHitbox" to="." method="_on_cursor_enter"]
 [connection signal="mouse_exited" from="Texture/HeadpatHitbox" to="." method="_on_cursor_exit"]
+[connection signal="animation_looped" from="Texture/Headpat" to="." method="_on_headpat"]

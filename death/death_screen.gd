@@ -24,7 +24,6 @@ func _ready() -> void:
 
 
 func _process(delta) -> void:
-	if transparency < 0.25:
+	if visible && transparency < 0.25:
 		transparency += 0.1 * delta;
-		
-	tv_static.set_shader_parameter("transparency", transparency);
+		tv_static.set_shader_parameter("transparency", transparency);

@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfxobmsgcqsjy"]
+[gd_scene load_steps=3 format=3 uid="uid://defa1h0aimlex"]
 
-[ext_resource type="PackedScene" uid="uid://defa1h0aimlex" path="res://menu/settings/options_display_button.tscn" id="1_bxkpu"]
+[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/font_mid.tres" id="2_asri6"]
 [ext_resource type="Script" path="res://menu/settings/window_mode_button.gd" id="2_to0x1"]
 
-[node name="WindowModeButton" instance=ExtResource("1_bxkpu")]
+[node name="WindowModeButton" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
 script = ExtResource("2_to0x1")
 
-[node name="Label" parent="HBoxContainer" index="0"]
-size_flags_vertical = 1
-text = "DISPLAY_MODE"
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme = ExtResource("2_asri6")
+text = "BASE_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="on_window_mode_selected"]
+[node name="OptionButton" type="OptionButton" parent="."]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+alignment = 1

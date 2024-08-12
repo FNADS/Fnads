@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://celpcwdhg77cd"]
+[gd_scene load_steps=9 format=3 uid="uid://celpcwdhg77cd"]
 
 [ext_resource type="Script" path="res://menu/settings/options_menu.gd" id="1_tvkaf"]
 [ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_e58ah"]
 [ext_resource type="Theme" uid="uid://dya6ykwne113c" path="res://assets/font/font_small.tres" id="3_yxhq0"]
 [ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/font_mid.tres" id="4_2pcel"]
 [ext_resource type="PackedScene" uid="uid://p8kdoop86n7m" path="res://menu/settings/volume_slider.tscn" id="5_5nali"]
-[ext_resource type="PackedScene" uid="uid://dfxobmsgcqsjy" path="res://menu/settings/window_mode_button.tscn" id="6_1t8mh"]
+[ext_resource type="PackedScene" uid="uid://defa1h0aimlex" path="res://menu/settings/window_mode_button.tscn" id="6_1t8mh"]
+[ext_resource type="Script" path="res://menu/settings/splash_screen_toggle_button.gd" id="7_ydodu"]
 [ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/font_big.tres" id="8_0fyha"]
 
 [node name="Menu" type="CanvasLayer"]
@@ -87,10 +88,20 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 50
 
 [node name="WindowModeButton" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_1t8mh")]
 layout_mode = 2
-size_flags_vertical = 3
+
+[node name="SplashScreenToggle" type="CheckBox" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_2pcel")
+theme_override_constants/outline_size = 13
+text = "SHOW_SPLASH_SCREEN"
+alignment = 2
+expand_icon = true
+script = ExtResource("7_ydodu")
 
 [node name="Back" type="Button" parent="Background"]
 layout_mode = 1
@@ -111,4 +122,5 @@ action_mode = 0
 text = "RETURN"
 flat = true
 
+[connection signal="toggled" from="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer/SplashScreenToggle" to="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer/SplashScreenToggle" method="_on_check_box_toggled"]
 [connection signal="pressed" from="Background/Back" to="." method="_on_back_pressed"]

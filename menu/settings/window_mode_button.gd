@@ -1,7 +1,8 @@
 extends Control
 
 
-@onready var option_button = $HBoxContainer/OptionButton as OptionButton
+@onready var option_button = $OptionButton as OptionButton
+
 
 func _ready() -> void:
 	add_window_mode_items();

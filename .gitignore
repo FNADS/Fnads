@@ -5,11 +5,7 @@
 .import/
 export.cfg
 addons/
+*.tmp
 
 # Imported translations (automatically generated from CSV files)
 *.translation
-
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json

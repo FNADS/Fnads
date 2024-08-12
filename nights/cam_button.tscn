@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8gulyglbty13"]
+
+[ext_resource type="Theme" uid="uid://bqo6uh04me6mv" path="res://nights/cam_button.tres" id="1_lmlqk"]
+[ext_resource type="Script" path="res://nights/cam_button.gd" id="2_efohw"]
+
+[node name="CamButton" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -9.0
+offset_right = 16.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("1_lmlqk")
+text = "Err"
+script = ExtResource("2_efohw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

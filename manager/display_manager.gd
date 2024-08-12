@@ -5,24 +5,15 @@ class_name DisplayManager
 const default_resolution := Vector2i(1920, 1080);
 
 
-#Deprecated:
-#const RESOLUTION_ARRAY : Array[Vector2i] = [
-	#Vector2i(1280, 720),
-	#Vector2i(1920, 1080), # Program was natively built for this resolution
-	#Vector2i(2560, 1440), 
-	#Vector2i(3840, 2160),
-#]
-
 const WINDOW_MODE_ARRAY : Array[String] = [
 	"FULLSCREEN",
 	"WINDOWED"
 ]
 
-
-#Deprecated:
-#func set_window_resolution(index : int) -> void:
-	#Global.settings["resolution"] = index;
-	#DisplayServer.window_set_size(RESOLUTION_ARRAY[index]);
+## Sets the games fps to what the monitor can display
+func adjust_max_fps() -> void:
+	var max_fps : int = (DisplayServer.screen_get_refresh_rate() as int) + 20;
+	Engine.max_fps = max_fps if max_fps > 0 else 60;
 
 
 ## [code]0[/code]: Fullscreen[br]
