@@ -7,7 +7,6 @@ var cam_id: int;
 func _ready() -> void:
 	cam_id = name.trim_prefix("CamButton") as int; 
 	
-	print(tr(text).length(), " - ", tr(text));
 	match tr(text).length():
 		0: printerr("Camera button name cannot be empty!");
 		1, 2: add_theme_font_size_override("font_size", 36);
