@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0y0ssdm2tc7"]
+
+[ext_resource type="Script" path="res://office/office_template.gd" id="1_4mkh7"]
+[ext_resource type="Texture2D" uid="uid://c5fq3ufsmnwct" path="res://_placeholder/placeholder_office.png" id="2_fwsgi"]
+[ext_resource type="Texture2D" uid="uid://2bmls0ot7e0x" path="res://_placeholder/placeholder_office_desk.png" id="3_wcamg"]
+[ext_resource type="PackedScene" uid="uid://d3y8puv62ttr7" path="res://office/cassette_player.tscn" id="4_k2e2c"]
+[ext_resource type="PackedScene" uid="uid://c5ckvt8xwjnov" path="res://office/cerber.tscn" id="4_tg5vf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtwlf"]
+size = Vector2(100, 1151)
+
+[node name="Office" type="Node2D"]
+script = ExtResource("1_4mkh7")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.26, 1.26)
+texture = ExtResource("2_fwsgi")
+
+[node name="PlaceholderOfficeDesk" type="Sprite2D" parent="Bg"]
+position = Vector2(16.069, 550.794)
+scale = Vector2(1.17284, 0.793651)
+texture = ExtResource("3_wcamg")
+
+[node name="CassettePlayer" parent="Bg" instance=ExtResource("4_k2e2c")]
+position = Vector2(390.675, 217.46)
+scale = Vector2(0.436508, 0.436508)
+
+[node name="Cerber" parent="Bg" instance=ExtResource("4_tg5vf")]
+position = Vector2(623.214, 218.254)
+scale = Vector2(0.793651, 0.793651)
+
+[node name="LeftTrigger" type="Area2D" parent="."]
+position = Vector2(6.10352e-05, 0)
+
+[node name="Shape" type="CollisionShape2D" parent="LeftTrigger"]
+position = Vector2(49.5, 526.5)
+shape = SubResource("RectangleShape2D_wtwlf")
+
+[node name="RightTrigger" type="Area2D" parent="."]
+position = Vector2(1840, 0)
+
+[node name="Shape" type="CollisionShape2D" parent="RightTrigger"]
+position = Vector2(30.5, 526.5)
+shape = SubResource("RectangleShape2D_wtwlf")
+
+[connection signal="mouse_entered" from="LeftTrigger" to="." method="set_left_movement"]
+[connection signal="mouse_exited" from="LeftTrigger" to="." method="stop_movement"]
+[connection signal="mouse_entered" from="RightTrigger" to="." method="set_right_movement"]
+[connection signal="mouse_exited" from="RightTrigger" to="." method="stop_movement"]

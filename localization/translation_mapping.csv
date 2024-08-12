@@ -1,0 +1,13 @@
+key,en,de
+PLAY,Play,Spielen
+SETTINGS,Settings,Optionen
+CREDITS,Credits,Mitwirkende
+QUIT,Quit,Beenden
+RETURN,Return,Zurück
+MASTER_VOLUME,Master Volume,Gesammtlautstärke
+MUSIC_VOLUME,Music Volume,Musiklautstärke
+SFX_VOLUME,SFX Volume,Geräuschlautstärke
+DISPLAY_MODE,Display Mode,Fenster Modus
+RESOLUTION,Resolution,Bildschirm Auflösung
+FULLSCREEN,Fullscreen,Vollbildmodus
+WINDOWED,Windowed Mode,Fenstermodus

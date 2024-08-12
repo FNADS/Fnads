@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5ckvt8xwjnov"]
+
+[ext_resource type="Script" path="res://office/cerber.gd" id="1_b0p40"]
+[ext_resource type="Texture2D" uid="uid://c8kjklwisy48i" path="res://_placeholder/placeholder_cerby_solid.png" id="1_lbjyh"]
+[ext_resource type="Texture2D" uid="uid://1f4epv8ldmsp" path="res://assets/headpat.png" id="3_njvaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khgii"]
+size = Vector2(218, 94.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ny7d"]
+atlas = ExtResource("3_njvaq")
+region = Rect2(0, 0, 109, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nu50"]
+atlas = ExtResource("3_njvaq")
+region = Rect2(109, 0, 109, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_statn"]
+atlas = ExtResource("3_njvaq")
+region = Rect2(218, 0, 109, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh6w3"]
+atlas = ExtResource("3_njvaq")
+region = Rect2(327, 0, 109, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hb1v"]
+atlas = ExtResource("3_njvaq")
+region = Rect2(436, 0, 109, 107)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4doy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ny7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nu50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_statn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh6w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hb1v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Cerber" type="Node2D"]
+script = ExtResource("1_b0p40")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_lbjyh")
+flip_h = true
+
+[node name="HeadpatHitbox" type="Area2D" parent="Texture"]
+
+[node name="Shape" type="CollisionShape2D" parent="Texture/HeadpatHitbox"]
+position = Vector2(-44, -69.25)
+shape = SubResource("RectangleShape2D_khgii")
+
+[node name="Headpat" type="AnimatedSprite2D" parent="Texture"]
+visible = false
+position = Vector2(-50, -71)
+scale = Vector2(1.1472, 1.1472)
+sprite_frames = SubResource("SpriteFrames_a4doy")
+
+[connection signal="mouse_entered" from="Texture/HeadpatHitbox" to="." method="_on_cursor_enter"]
+[connection signal="mouse_exited" from="Texture/HeadpatHitbox" to="." method="_on_cursor_exit"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjvppq41m0yj3"]
+
+[ext_resource type="Theme" uid="uid://dewp33mtaave7" path="res://assets/font/menu-1.tres" id="1_b36et"]
+[ext_resource type="Script" path="res://experimental/scroll_text/scroll_text.gd" id="2_3ct0s"]
+
+[node name="Experimental" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -78.0
+offset_right = 170.5
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_b36et")
+text = "Test"
+horizontal_alignment = 1
+script = ExtResource("2_3ct0s")
