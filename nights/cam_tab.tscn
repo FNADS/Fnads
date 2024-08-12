@@ -1,0 +1,145 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8vbw6wjq4or3"]
+
+[ext_resource type="Script" path="res://nights/cam_tab.gd" id="1_7sa5i"]
+[ext_resource type="Texture2D" uid="uid://cx1mrlj3l43fr" path="res://assets/menu/cam_map/cam_button.png" id="2_dyj0b"]
+[ext_resource type="Script" path="res://experimental/animated_texture_rect.gd" id="3_qr0xf"]
+[ext_resource type="PackedScene" uid="uid://c58i1dabs3mf7" path="res://nights/computer_tabs.tscn" id="4_1uxrr"]
+[ext_resource type="Texture2D" uid="uid://b0dcx8ax86sit" path="res://assets/menu/cam_map/cam_map_outline.png" id="5_ogg8e"]
+[ext_resource type="PackedScene" uid="uid://c8gulyglbty13" path="res://nights/cam_button.tscn" id="6_n3ry7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rf5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dyj0b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CamTab" type="CanvasLayer"]
+script = ExtResource("1_7sa5i")
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_dyj0b")
+script = ExtResource("3_qr0xf")
+sprite_frames = SubResource("SpriteFrames_1rf5w")
+
+[node name="tabs" parent="." instance=ExtResource("4_1uxrr")]
+
+[node name="CamMap" type="TextureRect" parent="."]
+offset_left = 1151.0
+offset_top = 540.0
+offset_right = 1976.0
+offset_bottom = 1080.0
+texture = ExtResource("5_ogg8e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CamButton0" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = -192.5
+offset_top = 17.0
+offset_right = -138.5
+offset_bottom = 52.0
+disabled = true
+text = "ART"
+
+[node name="CamButton1" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = -90.5
+offset_top = -106.0
+offset_right = -48.5
+offset_bottom = -74.0
+text = "C1"
+
+[node name="CamButton2" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = 127.5
+offset_top = -106.0
+offset_right = 169.5
+offset_bottom = -74.0
+text = "C2"
+
+[node name="CamButton3" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = -90.5
+offset_top = -59.0
+offset_right = -48.5
+offset_bottom = -27.0
+text = "C3"
+
+[node name="CamButton4" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = 127.5
+offset_top = -59.0
+offset_right = 169.5
+offset_bottom = -27.0
+text = "C4"
+
+[node name="CamButton5" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = -192.5
+offset_top = -192.0
+offset_right = -138.5
+offset_bottom = -157.0
+text = "CAFE"
+
+[node name="CamButton6" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = 7.5
+offset_top = -250.0
+offset_right = 56.5
+offset_bottom = -218.0
+text = "HALL1"
+
+[node name="CamButton7" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = -165.5
+offset_top = -80.0
+offset_right = -116.5
+offset_bottom = -48.0
+text = "HALL2"
+
+[node name="CamButton8" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = 6.5
+offset_top = 51.0
+offset_right = 56.5
+offset_bottom = 79.0
+text = "HALL3"
+
+[node name="CamButton9" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = 288.5
+offset_top = 18.0
+offset_right = 337.5
+offset_bottom = 50.0
+text = "GYM"
+
+[node name="CamButton10" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = -241.5
+offset_top = 145.0
+offset_right = -209.5
+offset_bottom = 174.0
+text = "JC"
+
+[node name="CamButton11" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = -140.5
+offset_top = 213.0
+offset_right = -91.5
+offset_bottom = 245.0
+text = "VENT"
+
+[node name="CamButton12" parent="CamMap" instance=ExtResource("6_n3ry7")]
+layout_mode = 1
+offset_left = 181.5
+offset_top = 173.0
+offset_right = 230.5
+offset_bottom = 205.0
+text = "STAFF"

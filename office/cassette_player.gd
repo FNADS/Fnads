@@ -1,16 +1,16 @@
-extends Node2D
+class_name CassettePlayer extends Node2D
 
 
-const rewind_time : float = 5.0; # The it needs to rewind the whole tape
+const rewind_time : float = 5.0; # The time it needs to rewind the whole tape
 
 
 @onready var music := $CassetteMusic as AudioStreamPlayer2D;
-@onready var rewind := $CassetteRewind as AudioStreamPlayer2D;
-@onready var button_in := $CassettePlayerButtonIn as AudioStreamPlayer2D;
-@onready var button_out := $CassettePlayerButtonOut as AudioStreamPlayer2D;
+@onready var sfx_rewind := $CassetteRewind as AudioStreamPlayer2D;
+@onready var sfx_button_in := $CassettePlayerButtonIn as AudioStreamPlayer2D;
+@onready var sfx_button_out := $CassettePlayerButtonOut as AudioStreamPlayer2D;
 var music_time : float = 0.0;
 var rewind_step : float; # The time it rewinds each second
-var rewind_tape : bool = false;
+var is_rewinding : bool = false;
 var hover_over := NONE;
 
 
@@ -23,24 +23,27 @@ enum {
 }
 
 
+signal music_playing_changed(is_playing);
+
+func emit_music_playing_changed() -> void: emit_signal("music_playing_changed", music.playing);
+
+
 func _ready() -> void:
 	rewind_step = music.stream.get_length() / rewind_time;
+	music.play();
 	
 	
 func _process(delta):
-	#DEBUG:
-	#print(music.get_playback_position());
-	#print(music_time);
-	#print();
-	
-	if rewind_tape && music_time > 0.0:
+	if music.playing: music_time = music.get_playback_position();
+		
+	if is_rewinding && music_time > 0.0:
 		music_time -= rewind_step * delta;
 		if music_time < 0.0:
 			music_time = 0.0;
-			rewind.stop();
+			sfx_rewind.stop();
 
 
-func  _input(event) -> void:
+func  _input(_event) -> void:
 	if Input.is_action_just_pressed("LEFT_CLICK"): use_cassette_player();
 	if Input.is_action_just_released("LEFT_CLICK"): stop_use_cassette_player();
 
@@ -48,25 +51,35 @@ func  _input(event) -> void:
 func use_cassette_player() -> void:
 	match hover_over:
 		CASSETTE: pass
-		REWIND:
-			if !music.playing:
-				button_in.play();
-				rewind_tape = true;
-				if (music_time > 0.0): rewind.play();
-		STOP:
-			button_out.play();
-			music_time = music.get_playback_position();
-			music.stop();
-		PLAY:
-			if !music.playing:
-				button_in.play();
-				music.play(music_time);
+		REWIND when !music.playing: rewind();
+		STOP: stop();
+		PLAY when !music.playing: play();
 
 
 func stop_use_cassette_player() -> void:
 	if hover_over == REWIND:
-		rewind.stop();
-		rewind_tape = false;
+		sfx_rewind.stop();
+		is_rewinding = false;
+
+
+func cassette() -> void: pass
+
+func rewind() -> void:
+	sfx_button_in.play();
+	is_rewinding = true;
+	if (music_time > 0.0): sfx_rewind.play();
+
+func stop() -> void:
+	sfx_button_out.play();
+	if music.playing:
+		music.stop();
+		emit_music_playing_changed();
+
+func play() -> void:
+	sfx_button_in.play();
+	if music_time < music.stream.get_length():
+		music.play(music_time);
+		emit_music_playing_changed();
 
 
 func _on_cassette_enter() -> void: hover_over = CASSETTE;
@@ -80,3 +93,8 @@ func _on_play_enter() -> void: hover_over = PLAY;
 func _on_mouse_exit_any() -> void:
 	stop_use_cassette_player();
 	hover_over = NONE;
+
+func _on_music_finished() -> void:
+	music_time = music.stream.get_length();
+	sfx_button_out.play();
+	emit_music_playing_changed();

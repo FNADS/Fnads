@@ -8,6 +8,18 @@ MASTER_VOLUME,Master Volume,Gesammtlautstärke
 MUSIC_VOLUME,Music Volume,Musiklautstärke
 SFX_VOLUME,SFX Volume,Geräuschlautstärke
 DISPLAY_MODE,Display Mode,Fenster Modus
-RESOLUTION,Resolution,Bildschirm Auflösung
 FULLSCREEN,Fullscreen,Vollbildmodus
 WINDOWED,Windowed Mode,Fenstermodus
+ART,Art,Kunst
+CAFE,Cafe,Cafe
+HALL1,Hall1,Flur1
+HALL2,Hall2,Flur2
+HALL3,Hall3,Flur3
+C1,C1,K1
+C2,C2,K2
+C3,C3,K3
+C4,C4,K4
+GYM,Gym,Sport
+STAFF,Staff,Personal
+VENT,Vent,Lüftung
+JC,JC,JC
