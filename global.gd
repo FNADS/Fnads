@@ -1,13 +1,13 @@
 extends Node
 
 
-var load_save_manager : LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
-var display_manager : DisplayManager = preload("res://manager/display_manager.gd").new();
-var time_manager : TimeManager = preload("res://manager/time_manager.gd").new();
+var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
+var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
+var time_manager: TimeManager= preload("res://manager/time_manager.gd").new();
 
 
-var settings : Dictionary;
-var game_state : Dictionary;
+var settings: Dictionary;
+var game_state: Dictionary;
 
 
 func _ready() -> void:
@@ -17,8 +17,12 @@ func _ready() -> void:
 		init_default_settings();
 		init_default_game_state();
 		load_save_manager.save_game();
-		
-	
+
+
+func _process(delta) -> void:
+	time_manager.process(delta);
+
+
 ## Sets the settings dict to the default values
 func init_default_settings() -> void:
 	var default_settings: Dictionary = {
@@ -30,6 +34,7 @@ func init_default_settings() -> void:
 		default_settings["volume"].append(1);
 	
 	settings = default_settings;
+
 
 ## Sets the game_state dict to the default values
 func init_default_game_state():
