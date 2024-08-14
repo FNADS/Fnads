@@ -1,52 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://c58i1dabs3mf7"]
+[gd_scene load_steps=6 format=3 uid="uid://c58i1dabs3mf7"]
 
-[ext_resource type="Theme" uid="uid://ck2764u743oc3" path="res://assets/font/font_mid.tres" id="1_8pekt"]
-[ext_resource type="Script" path="res://nights/tabs.gd" id="1_qjl03"]
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="1_y0uk5"]
+[ext_resource type="PackedScene" uid="uid://ohyvtohaejq" path="res://nights/computer_tab1.tscn" id="2_dyqsp"]
+[ext_resource type="PackedScene" uid="uid://b8vbw6wjq4or3" path="res://nights/cam_tab.tscn" id="2_qc5mu"]
+[ext_resource type="PackedScene" uid="uid://b6ddkxa72q320" path="res://nights/computer_tab3.tscn" id="4_8qmgf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyxvl"]
-bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lfax"]
+bg_color = Color(0.151276, 0.151276, 0.151276, 1)
 
-[node name="tabs" type="Control" node_paths=PackedStringArray("button1", "button2", "button3")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_qjl03")
-button1 = NodePath("HBoxContainer/tab1")
-button2 = NodePath("HBoxContainer/tab2")
-button3 = NodePath("HBoxContainer/tab3")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 2
+[node name="Panel" type="Panel"]
 offset_right = 1920.0
-offset_bottom = 155.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_fyxvl")
+offset_bottom = 81.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1lfax")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 0
-offset_right = 1613.0
-offset_bottom = 165.0
-scale = Vector2(1.19, 0.94)
-theme_override_constants/separation = 180
-alignment = 1
+offset_right = 1920.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("1_y0uk5")
+theme_override_font_sizes/font_size = 101
+tab_alignment = 1
 
-[node name="tab1" type="Button" parent="HBoxContainer"]
+[node name="Tab wan" type="Control" parent="TabContainer"]
+show_behind_parent = true
 layout_mode = 2
-theme = ExtResource("1_8pekt")
-text = "TAB WAN"
 
-[node name="tab2" type="Button" parent="HBoxContainer"]
+[node name="CanvasLayer" parent="TabContainer/Tab wan" instance=ExtResource("2_dyqsp")]
+show_behind_parent = true
+layout_mode = 1
+
+[node name="Tab chew" type="Control" parent="TabContainer"]
+visible = false
+show_behind_parent = true
 layout_mode = 2
-theme = ExtResource("1_8pekt")
-text = "TAB WAN"
 
-[node name="tab3" type="Button" parent="HBoxContainer"]
+[node name="Control" parent="TabContainer/Tab chew" instance=ExtResource("2_qc5mu")]
+show_behind_parent = true
+layout_mode = 1
+
+[node name="Tab tree" type="Control" parent="TabContainer"]
+visible = false
+show_behind_parent = true
 layout_mode = 2
-theme = ExtResource("1_8pekt")
-text = "TAB WAN"
 
-[connection signal="pressed" from="HBoxContainer/tab1" to="." method="_on_tab_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/tab2" to="." method="_on_tab_2_pressed"]
-[connection signal="pressed" from="HBoxContainer/tab3" to="." method="_on_tab_3_pressed"]
+[node name="CanvasLayer" parent="TabContainer/Tab tree" instance=ExtResource("4_8qmgf")]
+show_behind_parent = true
+layout_mode = 1
