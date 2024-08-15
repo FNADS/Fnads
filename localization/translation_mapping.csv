@@ -4,6 +4,7 @@ SETTINGS,Settings,Optionen
 CREDITS,Credits,Mitwirkende
 QUIT,Quit,Beenden
 RETURN,Return,Zurück
+BACK,Back,Zurück
 MASTER_VOLUME,Master Volume,Gesammtlautstärke
 MUSIC_VOLUME,Music Volume,Musiklautstärke
 SFX_VOLUME,SFX Volume,Geräuschlautstärke
@@ -23,3 +24,4 @@ GYM,Gym,Sport
 STAFF,Staff,Personal
 VENT,Vent,Lüftung
 JC,JC,HS
+CAMERAS,Cameras,Kameras

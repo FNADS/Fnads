@@ -1,3 +1,110 @@
-[gd_scene format=3 uid="uid://cpkp45578wcc7"]
+[gd_scene load_steps=13 format=3 uid="uid://cpkp45578wcc7"]
 
-[node name="Computer" type="CanvasLayer"]
+[ext_resource type="Texture2D" uid="uid://cwi7pi3mmw6cc" path="res://_placeholder/placeholder_pc.png" id="1_inydy"]
+[ext_resource type="Script" path="res://nights/computer.gd" id="2_u7uhl"]
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="2_xii7r"]
+[ext_resource type="Script" path="res://nights/computer_tab_bar.gd" id="3_42s11"]
+[ext_resource type="StyleBox" uid="uid://b1bdhkvijxj46" path="res://nights/computer_tab_hover.tres" id="3_ua60j"]
+[ext_resource type="PackedScene" uid="uid://b8vbw6wjq4or3" path="res://nights/cam_tab.tscn" id="5_4kq4g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdqre"]
+size = Vector2(627, 580)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82b0b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2uk0"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vvmc"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5808"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="Theme" id="Theme_ixann"]
+TabContainer/colors/drop_mark_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_disabled_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_hovered_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_outline_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_unselected_color = Color(1, 1, 1, 1)
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 0
+TabContainer/constants/outline_size = 0
+TabContainer/constants/side_margin = 0
+TabContainer/font_sizes/font_size = 100
+TabContainer/fonts/font = ExtResource("2_xii7r")
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/drop_mark = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_82b0b")
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_focus = null
+TabContainer/styles/tab_hovered = ExtResource("3_ua60j")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_a2uk0")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxEmpty_2vvmc")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_j5808")
+
+[node name="Computer" type="Sprite2D"]
+texture = ExtResource("1_inydy")
+script = ExtResource("2_u7uhl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -34)
+shape = SubResource("RectangleShape2D_jdqre")
+
+[node name="ComputerScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TabContainer" type="TabContainer" parent="ComputerScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ixann")
+tab_alignment = 1
+current_tab = 0
+script = ExtResource("3_42s11")
+
+[node name="CamTab" parent="ComputerScreen/TabContainer" instance=ExtResource("5_4kq4g")]
+show_behind_parent = true
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="DummyTab1" type="ColorRect" parent="ComputerScreen/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(1, 0.637731, 0.992229, 1)
+metadata/_tab_index = 1
+
+[node name="DummyTab2" type="ColorRect" parent="ComputerScreen/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0.533333, 0.898039, 0.901961, 1)
+metadata/_tab_index = 2
+
+[node name="Back" type="Control" parent="ComputerScreen/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_enter"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exit"]
+[connection signal="tab_selected" from="ComputerScreen/TabContainer" to="ComputerScreen/TabContainer" method="_on_tab_selected"]

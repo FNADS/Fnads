@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0y0ssdm2tc7"]
+[gd_scene load_steps=7 format=3 uid="uid://c0y0ssdm2tc7"]
 
 [ext_resource type="Script" path="res://office/office_template.gd" id="1_4mkh7"]
 [ext_resource type="Texture2D" uid="uid://c5fq3ufsmnwct" path="res://_placeholder/placeholder_office.png" id="2_fwsgi"]
 [ext_resource type="Texture2D" uid="uid://2bmls0ot7e0x" path="res://_placeholder/placeholder_office_desk.png" id="3_wcamg"]
 [ext_resource type="PackedScene" uid="uid://d3y8puv62ttr7" path="res://office/cassette_player.tscn" id="4_k2e2c"]
 [ext_resource type="PackedScene" uid="uid://c5ckvt8xwjnov" path="res://office/cerber.tscn" id="4_tg5vf"]
-[ext_resource type="Texture2D" uid="uid://cwi7pi3mmw6cc" path="res://_placeholder/placeholder_pc.png" id="6_vqvjx"]
-[ext_resource type="Script" path="res://office/mutton.gd" id="7_mshit"]
-[ext_resource type="PackedScene" uid="uid://c58i1dabs3mf7" path="res://nights/computer_tabs.tscn" id="7_weh6u"]
-[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="9_08aeo"]
+[ext_resource type="PackedScene" uid="uid://cpkp45578wcc7" path="res://nights/computer.tscn" id="6_h7ye8"]
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_4mkh7")
@@ -31,37 +28,6 @@ scale = Vector2(0.436508, 0.436508)
 position = Vector2(623.214, 218.254)
 scale = Vector2(0.793651, 0.793651)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(986, 755)
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("6_vqvjx")
-
-[node name="Button" type="Button" parent="Sprite2D" node_paths=PackedStringArray("tabs", "button")]
-offset_left = -369.0
-offset_top = -362.0
-offset_right = 360.0
-offset_bottom = 351.0
-action_mode = 0
-flat = true
-script = ExtResource("7_mshit")
-tabs = NodePath("../../Panel")
-button = NodePath("../../Button2")
-
-[node name="Panel" parent="." instance=ExtResource("7_weh6u")]
-visible = false
-top_level = true
-
-[node name="Button2" type="Button" parent="."]
-visible = false
-top_level = true
-offset_left = 292.0
-offset_top = 999.0
-offset_right = 1264.0
-offset_bottom = 1076.0
-theme_override_fonts/font = ExtResource("9_08aeo")
-theme_override_font_sizes/font_size = 96
-action_mode = 0
-text = "Back"
-
-[connection signal="pressed" from="Sprite2D/Button" to="Sprite2D/Button" method="_on_pressed"]
-[connection signal="pressed" from="Button2" to="Sprite2D/Button" method="_on_button_2_pressed"]
+[node name="Computer" parent="." instance=ExtResource("6_h7ye8")]
+position = Vector2(926, 793)
+scale = Vector2(0.420833, 0.420833)

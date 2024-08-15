@@ -30,7 +30,7 @@ func kill_player(): #This is just placeholder function.
 
 
 func _ready() -> void:
-	var cassette_player := get_parent().get_node("CassettePlayer") as CassettePlayer;
+	var cassette_player := $"../CassettePlayer" as CassettePlayer;
 	if cassette_player == null: printerr("Node CassettePlayer not found relative to Cerber");
 	else: cassette_player.connect("music_playing_changed", _on_music_playing_changed);
 	

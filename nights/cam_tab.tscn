@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8vbw6wjq4or3"]
+[gd_scene load_steps=15 format=3 uid="uid://b8vbw6wjq4or3"]
 
 [ext_resource type="Texture2D" uid="uid://c5fq3ufsmnwct" path="res://_placeholder/placeholder_office.png" id="1_00brd"]
 [ext_resource type="Script" path="res://nights/cam_tab.gd" id="1_7sa5i"]
-[ext_resource type="Shader" path="res://experimental/tv_static_overlay/tv_static.gdshader" id="2_u2cxh"]
 [ext_resource type="Script" path="res://experimental/animated_texture_rect.gd" id="3_qr0xf"]
 [ext_resource type="Texture2D" uid="uid://c8kjklwisy48i" path="res://_placeholder/placeholder_cerby_solid.png" id="3_usoqk"]
 [ext_resource type="Texture2D" uid="uid://5fjgahwtixb5" path="res://_placeholder/cerby_sleep.png" id="4_68ad0"]
@@ -14,12 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassette_player.png" id="8_yllrn"]
 [ext_resource type="Texture2D" uid="uid://2bmls0ot7e0x" path="res://_placeholder/placeholder_office_desk.png" id="9_h5kfy"]
 [ext_resource type="Texture2D" uid="uid://cwi7pi3mmw6cc" path="res://_placeholder/placeholder_pc.png" id="10_i4hiy"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8qmde"]
-shader = ExtResource("2_u2cxh")
-shader_parameter/transparency = 1.0
-shader_parameter/jitter_frequenzy = 100.0
-shader_parameter/jitter_amplitude = 5.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qxnr"]
 animations = [{
@@ -56,7 +49,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Control" type="Control"]
+[node name="CamTab" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,12 +69,14 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedTextureRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_8qmde")
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1000.0
+offset_left = -302.0
+offset_top = -12.0
+offset_right = 2012.81
+offset_bottom = 988.0
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_00brd")
-expand_mode = 1
+expand_mode = 3
 script = ExtResource("3_qr0xf")
 sprite_frames = SubResource("SpriteFrames_6qxnr")
 
