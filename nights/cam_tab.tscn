@@ -60,6 +60,7 @@ script = ExtResource("1_7sa5i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -217.0
 offset_top = -155.0
 offset_right = 2114.0
@@ -68,6 +69,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedTextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1000.0
 texture = ExtResource("1_00brd")
@@ -76,6 +78,7 @@ script = ExtResource("3_qr0xf")
 sprite_frames = SubResource("SpriteFrames_6qxnr")
 
 [node name="CamMap" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1151.0
 offset_top = 465.0
 offset_right = 1976.0
