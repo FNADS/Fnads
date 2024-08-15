@@ -20,10 +20,12 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("1_y0uk5")
 theme_override_font_sizes/font_size = 101
 tab_alignment = 1
+current_tab = 0
 
 [node name="Tab wan" type="Control" parent="TabContainer"]
 show_behind_parent = true
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="CanvasLayer" parent="TabContainer/Tab wan" instance=ExtResource("2_dyqsp")]
 show_behind_parent = true
@@ -33,6 +35,7 @@ layout_mode = 1
 visible = false
 show_behind_parent = true
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="Control" parent="TabContainer/Tab chew" instance=ExtResource("2_qc5mu")]
 show_behind_parent = true
@@ -42,6 +45,7 @@ layout_mode = 1
 visible = false
 show_behind_parent = true
 layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="CanvasLayer" parent="TabContainer/Tab tree" instance=ExtResource("4_8qmgf")]
 show_behind_parent = true

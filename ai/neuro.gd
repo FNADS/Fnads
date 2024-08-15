@@ -19,6 +19,8 @@ var Total_cam_time = 100
 var Vent_Office_Attack = false #indicates if neuro is attacking the office from the vent evil should do the opposite
 var Vent_Attack = false # chooses if neuro is going through vent or hallway
 func _process(delta):
+	#sets the global position to her current position
+	Global.char_positions[2] = room
 	#prevents an infinite value
 	if AI_Level > 0:
 		#increases the timer

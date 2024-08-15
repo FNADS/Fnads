@@ -21,7 +21,7 @@ var kill_Time = 10
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #sets the global position to her current position
-	Global.CharPositons[0] = room
+	Global.char_positions[0] = room
 #if she is outside of the room
 	if room != 0:
 		#coded timer
@@ -124,6 +124,3 @@ func CheckAll():
 		room = 0
 	else:
 		room = 2
-
-
-

@@ -20,6 +20,8 @@ var Vent_Office_Attack = false #indicates if Evil is attacking the office from t
 var Vent_Attack = false # chooses if Evil is going through vent or hallway
 
 func _process(delta):
+	#sets the global position to her current position
+	Global.char_positions[1] = room
 	#prevents an infinite value
 	if AI_Level > 0:
 		#increases the timer
