@@ -4,7 +4,7 @@ extends Node
 var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
 var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
 var time_manager: TimeManager= preload("res://manager/time_manager.gd").new();
-var char_positions:= [0,0,0,0,0]
+# var char_positions:= [0,0,0,0,0] # Better fits in the ai manager
 
 var settings: Dictionary;
 var game_state: Dictionary;
