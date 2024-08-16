@@ -45,7 +45,7 @@ func _ready() -> void:
 	Global.time_manager.is_running = true;
 
 
-func _process(delta) -> void:	
+func _process(delta) -> void:
 	if !Global.time_manager.is_running: return
 	
 	#region Music
