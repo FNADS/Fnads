@@ -55,16 +55,17 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="CassetteMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_x0akr")
+volume_db = -8.0
 bus = &"Music"
 
-[node name="CassetteRewind" type="AudioStreamPlayer2D" parent="."]
+[node name="CassetteRewindSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_3yhnr")
 
-[node name="CassettePlayerButtonIn" type="AudioStreamPlayer2D" parent="."]
+[node name="CassettePlayerButtonInSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_q052q")
 bus = &"Sound Effects"
 
-[node name="CassettePlayerButtonOut" type="AudioStreamPlayer2D" parent="."]
+[node name="CassettePlayerButtonOutSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_2okhb")
 bus = &"Sound Effects"
 

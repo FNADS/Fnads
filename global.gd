@@ -1,10 +1,29 @@
 extends Node
 
+## The main manager node for the whole game. It handles often used functions and holds references to other scripts that also need to be accessed gloably but don't fit in the global script directly
+
+enum room_mapping {
+	ART,
+	C1,
+	C2,
+	C3,
+	C4,
+	CAFE,
+	HALL1,
+	HALL2,
+	HALL3,
+	GYM,
+	JC,
+	VENT,
+	STAFF
+}
+
 
 var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
 var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
 var time_manager: TimeManager= preload("res://manager/time_manager.gd").new();
 # var char_positions:= [0,0,0,0,0] # Better fits in the ai manager
+
 
 var settings: Dictionary;
 var game_state: Dictionary;
