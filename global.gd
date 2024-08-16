@@ -15,7 +15,9 @@ enum room_mapping {
 	GYM,
 	JC,
 	VENT,
-	STAFF
+	STAFF,
+	BATHROOM,
+	KITCHEN
 }
 
 
