@@ -3,12 +3,26 @@ extends Node
 
 var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
 var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
-var time_manager: TimeManager= preload("res://manager/time_manager.gd").new();
-var char_positions:= [0,0,0,0,0]
+var time_manager: TimeManager = preload("res://manager/time_manager.gd").new();
+var ai_manager: AIManager = preload("res://ai/ai_manager.gd").new();
 
 var settings: Dictionary;
 var game_state: Dictionary;
-
+enum room_mapping {
+	ART,
+	C1,
+	C2,
+	C3,
+	C4,
+	CAFE,
+	HALL1,
+	HALL2,
+	HALL3,
+	GYM,
+	JC,
+	VENT,
+	STAFF
+}
 
 func _ready() -> void:
 	display_manager.adjust_max_fps();
