@@ -5,9 +5,9 @@ const rewind_time : float = 5.0; # The time it needs to rewind the whole tape
 
 
 @onready var music := $CassetteMusic as AudioStreamPlayer2D;
-@onready var sfx_rewind := $CassetteRewind as AudioStreamPlayer2D;
-@onready var sfx_button_in := $CassettePlayerButtonIn as AudioStreamPlayer2D;
-@onready var sfx_button_out := $CassettePlayerButtonOut as AudioStreamPlayer2D;
+@onready var sfx_rewind := $CassetteRewindSFX as AudioStreamPlayer2D;
+@onready var sfx_button_in := $CassettePlayerButtonInSFX as AudioStreamPlayer2D;
+@onready var sfx_button_out := $CassettePlayerButtonOutSFX as AudioStreamPlayer2D;
 var music_time : float = 0.0;
 var rewind_step : float; # The time it rewinds each second
 var is_rewinding : bool = false;
