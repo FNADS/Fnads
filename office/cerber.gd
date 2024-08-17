@@ -89,14 +89,17 @@ func update_expression() -> void:
 			int(Global.time_manager.hours_since_timestamp(last_headpat) >= 0.75) +\
 			int(Global.time_manager.hours_since_timestamp(last_headpat) >= 1.0);
 			
-	headpat_count_state = int(headpat_count >= 3) + int(headpat_count >= 5) * 2;
+	headpat_count_state = int(headpat_count >= 3) + int(headpat_count >= 4) + int(headpat_count >= 5);
 	
 	var new_expression_frame: int = max(last_music_state, last_headpat_state, headpat_count_state);
 	
 	if cerber.frame == new_expression_frame: return;
 	
 	cerber.frame = new_expression_frame;
-	if new_expression_frame <= 2: sfx_waking_up.play();
+	print(new_expression_frame);
+	if new_expression_frame >= 1:
+		sfx_waking_up.play();
+		print("sfx");
 	if new_expression_frame == 3: kill_player();
 	
 
