@@ -21,12 +21,13 @@ enum room_mapping {
 }
 
 
+var settings: Dictionary;
+var game_state: Dictionary;
 var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
 var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
 var time_manager: TimeManager = preload("res://manager/time_manager.gd").new();
 var ai_manager: AIManager = preload("res://manager/ai_manager.gd").new();
-var settings: Dictionary;
-var game_state: Dictionary;
+var cursor: Cursor = preload("res://cusrom_resources/cursor.gd").new(preload("res://assets/cursor.png"), [Vector2(0,0), Vector2(16,16), Vector2(16,16)]);
 
 
 func _ready() -> void:
@@ -50,6 +51,7 @@ func init_default_settings() -> void:
 		"volume": [],
 	}
 	for i in AudioServer.bus_count:
+		print(i);
 		default_settings["volume"].append(1);
 	
 	settings = default_settings;

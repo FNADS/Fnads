@@ -95,7 +95,6 @@ layout_mode = 2
 
 [node name="SplashScreenToggle" type="CheckBox" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-mouse_default_cursor_shape = 2
 theme = ExtResource("4_2pcel")
 theme_override_constants/outline_size = 13
 text = "SHOW_SPLASH_SCREEN"
