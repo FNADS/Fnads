@@ -33,7 +33,7 @@ func _ready() -> void:
 	music.play();
 	
 	
-func _process(delta):
+func _process(delta):	
 	if music.playing: music_time = music.get_playback_position();
 		
 	if is_rewinding && music_time > 0.0:
@@ -82,15 +82,24 @@ func play() -> void:
 		emit_music_playing_changed();
 
 
-func _on_cassette_enter() -> void: hover_over = CASSETTE;
+func _on_cassette_enter() -> void:
+	Global.cursor.set_cursor_index(1);
+	hover_over = CASSETTE;
+	
+func _on_rewind_enter() -> void:
+	Global.cursor.set_cursor_index(1);
+	hover_over = REWIND;
 
-func _on_rewind_enter() -> void: hover_over = REWIND;
+func _on_stop_enter() -> void:
+	Global.cursor.set_cursor_index(1);
+	hover_over = STOP;
 
-func _on_stop_enter() -> void: hover_over = STOP;
-
-func _on_play_enter() -> void: hover_over = PLAY;
+func _on_play_enter() -> void:
+	Global.cursor.set_cursor_index(1);
+	hover_over = PLAY;
 
 func _on_mouse_exit_any() -> void:
+	Global.cursor.set_cursor_index(0);
 	stop_use_cassette_player();
 	hover_over = NONE;
 

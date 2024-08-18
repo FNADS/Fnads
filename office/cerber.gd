@@ -8,7 +8,7 @@ const max_time_without_care: float = 90.0;
 @onready var cerber := $Texture as AnimatedSprite2D;
 @onready var headpat := $Texture/Headpat as AnimatedSprite2D;
 @onready var sfx_waking_up := $WakingUpSFX as AudioStreamPlayer2D;
-@onready var cursor_atlas := AtlasTexture.new();
+@onready var headpat_cursor := AtlasTexture.new();
 var time_is_running: bool = false;
 var variation_max_time_without_care: float;
 #region Muisc vars
@@ -38,8 +38,8 @@ func _ready() -> void:
 	variation_max_time_without_care = max_time_without_care * Global.time_manager.variation;
 	
 	var headpat_tex := load("res://assets/headpat.png") as Texture2D;
-	cursor_atlas.atlas = headpat_tex;
-	cursor_atlas.region = Rect2(Vector2.ZERO, Vector2(headpat_tex.get_size().y, headpat_tex.get_size().y));
+	headpat_cursor.atlas = headpat_tex;
+	headpat_cursor.region = Rect2(Vector2.ZERO, Vector2(headpat_tex.get_size().y, headpat_tex.get_size().y));
 	
 	#DEBUG
 	Global.time_manager.is_running = true;
@@ -101,7 +101,6 @@ func update_expression() -> void:
 		sfx_waking_up.play();
 		print("sfx");
 	if new_expression_frame == 3: kill_player();
-	
 
 
 func start_headpat() -> void:
@@ -118,12 +117,12 @@ func stop_headpat() -> void:
 
 func _on_cursor_enter() -> void:
 	in_headpat_area = true;
-	DisplayServer.cursor_set_custom_image(cursor_atlas, DisplayServer.CURSOR_ARROW, Vector2(cursor_atlas.region.get_center()));
+	DisplayServer.cursor_set_custom_image(headpat_cursor, DisplayServer.CURSOR_ARROW, Vector2(headpat_cursor.region.get_center()));
 
 
 func _on_cursor_exit() -> void:
 	in_headpat_area = false;
-	DisplayServer.cursor_set_custom_image(null);
+	Global.cursor.set_cursor_index(0);
 
 
 func _on_headpat() -> void:
