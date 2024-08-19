@@ -40,12 +40,9 @@ func _ready() -> void:
 	var headpat_tex := load("res://assets/headpat.png") as Texture2D;
 	headpat_cursor.atlas = headpat_tex;
 	headpat_cursor.region = Rect2(Vector2.ZERO, Vector2(headpat_tex.get_size().y, headpat_tex.get_size().y));
-	
-	#DEBUG
-	Global.time_manager.is_running = true;
 
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if !Global.time_manager.is_running: return
 	
 	#region Music

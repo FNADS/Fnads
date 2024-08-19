@@ -8,6 +8,7 @@ BACK,Back,Zurück
 MASTER_VOLUME,Master Volume,Gesammtlautstärke
 MUSIC_VOLUME,Music Volume,Musiklautstärke
 SFX_VOLUME,SFX Volume,Geräuschlautstärke
+VOICE_VOLUME,Voice Volume,Stimmlautstärke
 DISPLAY_MODE,Display Mode,Fenster Modus
 SHOW_SPLASH_SCREEN,Show Splash Screen,Startbildschirm Anzeigen
 FULLSCREEN,Fullscreen,Vollbildmodus

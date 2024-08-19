@@ -1,10 +1,10 @@
 extends HSlider
 
-@export var bus_name: String
-var bus_index: int
+@export var bus_name: String;
+var bus_index: int;
 
 func _ready() -> void:
-	bus_index = AudioServer.get_bus_index(bus_name)
+	bus_index = AudioServer.get_bus_index(bus_name);
 	value = Global.settings["volume"][bus_index];
 
 func _on_value_changed(new_value: float) -> void:
