@@ -34,10 +34,10 @@ func emit_music_playing_changed() -> void: if !cassette_front_side: emit_signal(
 func _process(delta) -> void:
 	
 	#DEBUG
-	print("Audio Time: ", audio_time);
-	print("Is Rewinding: ", is_rewinding);
-	print("Cassette Front Side: ", cassette_front_side);
-	print();
+	#print("Audio Time: ", audio_time);
+	#print("Is Rewinding: ", is_rewinding);
+	#print("Cassette Front Side: ", cassette_front_side);
+	#print();
 	
 	
 	if get_current_cassette_side().playing: audio_time = get_current_cassette_side().get_playback_position();

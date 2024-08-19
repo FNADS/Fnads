@@ -50,9 +50,7 @@ func init_default_settings() -> void:
 		"window_mode": 1,
 		"volume": [],
 	}
-	for i in AudioServer.bus_count:
-		print(i);
-		default_settings["volume"].append(1);
+	for i in AudioServer.bus_count: default_settings["volume"].append(1);
 	
 	settings = default_settings;
 

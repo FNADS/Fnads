@@ -11,11 +11,10 @@ func _input(event) -> void:
 
 
 func _on_mouse_enter() -> void:
-	print("hand")
 	Global.cursor.set_cursor_index(1);
 	mouse_on_pc = true;
-	
+
+
 func _on_mouse_exit() -> void:
-	print("arrow")
 	Global.cursor.set_cursor_index(0);
 	mouse_on_pc = false;

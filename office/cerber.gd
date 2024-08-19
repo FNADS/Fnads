@@ -93,10 +93,7 @@ func update_expression() -> void:
 	if cerber.frame == new_expression_frame: return;
 	
 	cerber.frame = new_expression_frame;
-	print(new_expression_frame);
-	if new_expression_frame >= 1:
-		sfx_waking_up.play();
-		print("sfx");
+	if new_expression_frame >= 1: sfx_waking_up.play();
 	if new_expression_frame == 3: kill_player();
 
 
