@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3y8puv62ttr7"]
+[gd_scene load_steps=13 format=3 uid="uid://d3y8puv62ttr7"]
 
 [ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassette_player.png" id="1_q7bm5"]
 [ext_resource type="Script" path="res://office/cassette_player.gd" id="1_sokl1"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://c5qqd20djdfoa" path="res://audio/sound_effects/rewind_cassette_tape.ogg" id="4_3yhnr"]
 [ext_resource type="AudioStream" uid="uid://6oxqei6iomis" path="res://audio/sound_effects/cassette_player_button_in.ogg" id="5_q052q"]
 [ext_resource type="AudioStream" uid="uid://depp2hue76j3j" path="res://audio/sound_effects/cassette_player_button_out.ogg" id="6_2okhb"]
+[ext_resource type="AudioStream" uid="uid://dbte87pih3nom" path="res://_placeholder/garbled_speech.ogg" id="7_jeko8"]
+[ext_resource type="AudioStream" uid="uid://bogk67i5osp02" path="res://audio/sound_effects/cassette_tape_change.ogg" id="8_1fyqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6epe"]
 size = Vector2(183, 89)
@@ -69,6 +71,18 @@ bus = &"Sound Effects"
 stream = ExtResource("6_2okhb")
 bus = &"Sound Effects"
 
+[node name="CassetteChangeSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_1fyqq")
+bus = &"Sound Effects"
+
+[node name="InstructionSpeechVA" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jeko8")
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="mouse_entered" from="Texture/Cassette" to="." method="_on_cassette_enter"]
 [connection signal="mouse_exited" from="Texture/Cassette" to="." method="_on_mouse_exit_any"]
 [connection signal="mouse_entered" from="Texture/Rewind" to="." method="_on_rewind_enter"]
@@ -77,4 +91,6 @@ bus = &"Sound Effects"
 [connection signal="mouse_exited" from="Texture/Stop" to="." method="_on_mouse_exit_any"]
 [connection signal="mouse_entered" from="Texture/Play" to="." method="_on_play_enter"]
 [connection signal="mouse_exited" from="Texture/Play" to="." method="_on_mouse_exit_any"]
-[connection signal="finished" from="CassetteMusic" to="." method="_on_music_finished"]
+[connection signal="finished" from="CassetteMusic" to="." method="_on_audio_finished"]
+[connection signal="finished" from="InstructionSpeechVA" to="." method="_on_audio_finished"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_finish"]
