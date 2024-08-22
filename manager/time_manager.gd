@@ -1,5 +1,7 @@
 class_name TimeManager
 
+##
+
 
 ## Default length of a night in seconds
 const default_time_per_nigth: float = 540;

@@ -49,7 +49,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Control" type="Control"]
+[node name="CamTab" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,10 +70,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimatedTextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1000.0
+offset_left = -302.0
+offset_top = -12.0
+offset_right = 2012.81
+offset_bottom = 988.0
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_00brd")
-expand_mode = 1
+expand_mode = 3
 script = ExtResource("3_qr0xf")
 sprite_frames = SubResource("SpriteFrames_6qxnr")
 

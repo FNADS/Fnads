@@ -1,13 +1,7 @@
 extends Node
 
+## The main manager node for the whole game. It handles often used functions and holds references to other scripts that also need to be accessed gloably but don't fit in the global script directly
 
-var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
-var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
-var time_manager: TimeManager = preload("res://manager/time_manager.gd").new();
-var ai_manager: AIManager = preload("res://ai/ai_manager.gd").new();
-
-var settings: Dictionary;
-var game_state: Dictionary;
 enum room_mapping {
 	ART,
 	C1,
@@ -21,8 +15,20 @@ enum room_mapping {
 	GYM,
 	JC,
 	VENT,
-	STAFF
+	STAFF,
+	BATHROOM,
+	KITCHEN
 }
+
+
+var settings: Dictionary;
+var game_state: Dictionary;
+var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
+var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
+var time_manager: TimeManager = preload("res://manager/time_manager.gd").new();
+var ai_manager: AIManager = preload("res://manager/ai_manager.gd").new();
+var cursor: Cursor = preload("res://cusrom_resources/cursor.gd").new(preload("res://assets/cursor.png"), [Vector2(0,0), Vector2(16,16), Vector2(16,16)]);
+
 
 func _ready() -> void:
 	display_manager.adjust_max_fps();
@@ -44,8 +50,7 @@ func init_default_settings() -> void:
 		"window_mode": 1,
 		"volume": [],
 	}
-	for i in AudioServer.bus_count:
-		default_settings["volume"].append(1);
+	for i in AudioServer.bus_count: default_settings["volume"].append(1);
 	
 	settings = default_settings;
 

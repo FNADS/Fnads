@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://celpcwdhg77cd"]
+[gd_scene load_steps=10 format=3 uid="uid://celpcwdhg77cd"]
 
 [ext_resource type="Script" path="res://menu/settings/options_menu.gd" id="1_tvkaf"]
 [ext_resource type="Texture2D" uid="uid://csitil44ua4ck" path="res://assets/menu/background.png" id="2_e58ah"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://defa1h0aimlex" path="res://menu/settings/window_mode_button.tscn" id="6_1t8mh"]
 [ext_resource type="Script" path="res://menu/settings/splash_screen_toggle_button.gd" id="7_ydodu"]
 [ext_resource type="Theme" uid="uid://c3wy3kpvtyhlf" path="res://assets/font/font_big.tres" id="8_0fyha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_amrob"]
 
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_tvkaf")
@@ -39,42 +41,78 @@ split_offset = 700
 layout_mode = 2
 theme = ExtResource("3_yxhq0")
 
-[node name="Volume" type="VBoxContainer" parent="Background/Settings Elements/Settings Options"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/Settings Elements/Settings Options"]
 layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Volume" type="VBoxContainer" parent="Background/Settings Elements/Settings Options/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("3_yxhq0")
 
-[node name="Master_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
+[node name="MasterLabel" type="Label" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume"]
 layout_mode = 2
 theme = ExtResource("4_2pcel")
 text = "MASTER_VOLUME"
 horizontal_alignment = 1
 
-[node name="Master" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
+[node name="Master" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume" instance=ExtResource("5_5nali")]
 layout_mode = 2
+size_flags_vertical = 1
 theme = ExtResource("3_yxhq0")
 bus_name = "Master"
 
-[node name="Music_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
+[node name="HSeparator" type="HSeparator" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume"]
+layout_mode = 2
+theme_override_constants/separation = 30
+theme_override_styles/separator = SubResource("StyleBoxEmpty_amrob")
+
+[node name="MusicLabel" type="Label" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume"]
 layout_mode = 2
 theme = ExtResource("4_2pcel")
 text = "MUSIC_VOLUME"
 horizontal_alignment = 1
 
-[node name="Music" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
+[node name="Music" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume" instance=ExtResource("5_5nali")]
 layout_mode = 2
+size_flags_vertical = 1
 theme = ExtResource("3_yxhq0")
 bus_name = "Music"
 
-[node name="Sound Effects_label" type="Label" parent="Background/Settings Elements/Settings Options/Volume"]
+[node name="HSeparator2" type="HSeparator" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume"]
+layout_mode = 2
+theme_override_constants/separation = 30
+theme_override_styles/separator = SubResource("StyleBoxEmpty_amrob")
+
+[node name="SoundEffectsLabel" type="Label" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume"]
 layout_mode = 2
 theme = ExtResource("4_2pcel")
 text = "SFX_VOLUME"
 horizontal_alignment = 1
 
-[node name="Sound Effects" parent="Background/Settings Elements/Settings Options/Volume" instance=ExtResource("5_5nali")]
+[node name="SoundEffects" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume" instance=ExtResource("5_5nali")]
 layout_mode = 2
+size_flags_vertical = 1
 theme = ExtResource("3_yxhq0")
 bus_name = "Sound Effects"
+
+[node name="HSeparator3" type="HSeparator" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume"]
+layout_mode = 2
+theme_override_constants/separation = 30
+theme_override_styles/separator = SubResource("StyleBoxEmpty_amrob")
+
+[node name="VoiceLabel" type="Label" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume"]
+layout_mode = 2
+theme = ExtResource("4_2pcel")
+text = "VOICE_VOLUME"
+horizontal_alignment = 1
+
+[node name="Voice" parent="Background/Settings Elements/Settings Options/ScrollContainer/Volume" instance=ExtResource("5_5nali")]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("3_yxhq0")
+bus_name = "Voice"
 
 [node name="PanelContainer" type="PanelContainer" parent="Background/Settings Elements"]
 layout_mode = 2
@@ -95,7 +133,6 @@ layout_mode = 2
 
 [node name="SplashScreenToggle" type="CheckBox" parent="Background/Settings Elements/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-mouse_default_cursor_shape = 2
 theme = ExtResource("4_2pcel")
 theme_override_constants/outline_size = 13
 text = "SHOW_SPLASH_SCREEN"
