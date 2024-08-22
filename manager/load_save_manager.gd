@@ -20,7 +20,6 @@ func load_game() -> bool:
 	var load_file:= FileAccess.open("user://save_data.json", FileAccess.READ);
 	
 	if FileAccess.get_open_error() != Error.OK: return false;
-	
 	var load_str: String = load_file.get_as_text();
 	load_file.close();
 	var load_data := JSON.parse_string(load_str) as Dictionary;
@@ -31,11 +30,17 @@ func load_game() -> bool:
 	
 	
 func load_settings(settings_data: Dictionary) -> void:
+	if settings_data["volume"].size() < AudioServer.bus_count:
+		push_error("volume data invalid, attempting to fix...");
+		while settings_data["volume"].size() < AudioServer.bus_count:
+			settings_data["volume"].append(1)
+		if settings_data["volume"].size() >= AudioServer.bus_count:
+			save_game()
+	else: 
+		for i in AudioServer.bus_count:
+			AudioServer.set_bus_volume_db(i, linear_to_db(settings_data["volume"][i] as float));
 	Global.settings = settings_data;
 	Global.display_manager.set_window_mode(settings_data["window_mode"] as int);
-	for i in AudioServer.bus_count:
-		AudioServer.set_bus_volume_db(i, linear_to_db(settings_data["volume"][i] as float));
-		
 	
 func load_game_state(game_state_data: Dictionary) -> void:
 	Global.game_state = game_state_data;
