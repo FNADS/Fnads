@@ -51,7 +51,7 @@ func load_game_state(game_state_data: Dictionary) -> void:
 		if data == null: continue;
 		
 		if typeof(data) == TYPE_ARRAY:
-			for i in Global.game_state_data[key].size():
-				Global.game_state_data[key][i] = data[i];
-		else: Global.game_state_data[key] = data;
+			for i in Global.game_state[key].size():
+				Global.game_state[key][i] = data[i];
+		else: Global.game_state[key] = data;
 	

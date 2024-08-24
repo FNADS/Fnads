@@ -1,4 +1,6 @@
 extends Node
+
+
 var AI_Level :int= 20 #current ai level
 var AI_Move_Speed = 5 #time between checking for a move
 const x = 20  #max ai level before move speed changes

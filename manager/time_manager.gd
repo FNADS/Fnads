@@ -9,7 +9,7 @@ const default_time_per_nigth: float = 540;
 
  ## Variation that get's multiplied with the default time 
 var variation: float = randf_range(0.8, 1.2);
-var time_elapsed: float = 0.0; #time passed in seconds
+var time: float = 0.0; #time passed in seconds
 var is_running: bool = false:
 	get: return is_running;
 	set(value):
@@ -28,19 +28,19 @@ func _init() -> void:
 
 
 func process(delta) -> void:
-	if is_running: time_elapsed += delta;
+	if is_running: time += delta;
 
 
 #region This does not belong in this skript
 		#if gethour() == 8: #if the current time is 8am
 			#Global.current_night += 1 # unlock next night
-		#time_elapsed = 0.00 #reset time elapsed#end night
+		#time = 0.00 #reset time elapsed#end night
 	#Global.current_am = gethour() # update global variable "current_am" to reflect the current time(am)
 #endregion
 
 
 ## Returns the current in game hour
-func gethour() -> int: return floori(time_elapsed / time_per_hour) + 2;
+func gethour() -> int: return floori(time / time_per_hour) + 2;
 
 
-func hours_since_timestamp(timestamp: float) -> float: return (time_elapsed - timestamp) / time_per_hour;
+func hours_since_timestamp(timestamp: float) -> float: return (time - timestamp) / time_per_hour;
