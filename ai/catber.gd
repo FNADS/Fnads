@@ -11,9 +11,6 @@ var inaccessible_rooms: Array[Global.room_mapping] = [Global.room_mapping.VENT];
 var rooms_to_destroy: Array[Global.room_mapping] = [];
 var current_room := Global.room_mapping.HALL1;
 var target_room: Global.room_mapping;
-var current_pathway = [-1,-1,-1,-1,-1];
-var temp_pathway = [-1,-1,-1,-1,-1];
-var kill_Time = 10;
 
 
 func _init() -> void:
