@@ -13,6 +13,9 @@ var current_room := Global.room_mapping.HALL1;
 var target_room: Global.room_mapping;
 
 
+#var count: int = 0; #DEBUG
+
+
 func _init() -> void:
 	# Gets all available rooms and fills the rooms_to_destroy array unless they are on the inaccessible rooms list (Office excuded)
 	for room in Global.room_mapping.values():
@@ -27,8 +30,10 @@ func process(delta: float) -> void:
 		next_move_timestamp = Global.time_manager.time + move_wait_time;
 		
 		if target_room == current_room && !rooms_to_destroy.has(current_room):
-			print("I'm getting a new room");
+			#print("I'm getting a new room"); #DEBUG
+			#count = 0; #DEBUG
 			get_new_target_room(current_room);
+			#print("Count: ", count);
 		if target_room != current_room && randi_range(0, movement_level_up) < ai_lv: current_room = target_room;
 		if rooms_to_destroy.has(current_room): rooms_to_destroy.erase(current_room);
 		
@@ -45,6 +50,8 @@ func get_new_target_room(room: Global.room_mapping) -> void:
 
 
 func get_closest_undestroyed_room(room: Global.room_mapping, distance: int) -> Global.room_mapping:
+	#count += 1; #DEBUG
+	if distance == 5: return room;
 	for connected_room in Global.room_connections[Global.room_mapping.find_key(room)]:
 		if rooms_to_destroy.has(connected_room):
 			return connected_room;
