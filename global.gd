@@ -83,7 +83,7 @@ var ai_manager: AIManager = preload("res://manager/ai_manager.gd").new();
 var cursor: Cursor = preload("res://cusrom_resources/cursor.gd").new(preload("res://assets/cursor.png"), [Vector2(0,0), Vector2(16,16), Vector2(16,16)]);
 
 
-func _ready() -> void:	
+func _ready() -> void:
 	display_manager.adjust_max_fps();
 	
 	init_default_settings();
