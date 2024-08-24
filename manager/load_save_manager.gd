@@ -31,12 +31,27 @@ func load_game() -> bool:
 	
 	
 func load_settings(settings_data: Dictionary) -> void:
-	Global.settings = settings_data;
-	Global.display_manager.set_window_mode(settings_data["window_mode"] as int);
+	for key in Global.settings.keys():
+		var data: Variant = settings_data.get(key);
+		if data == null: continue;
+		
+		if typeof(data) == TYPE_ARRAY:
+			for i in Global.settings[key].size():
+				Global.settings[key][i] = data[i];
+		else: Global.settings[key] = data;
+	
+	Global.display_manager.set_window_mode(Global.settings["window_mode"] as int);
 	for i in AudioServer.bus_count:
-		AudioServer.set_bus_volume_db(i, linear_to_db(settings_data["volume"][i] as float));
+		AudioServer.set_bus_volume_db(i, linear_to_db(Global.settings["volume"][i] as float));
 		
 	
 func load_game_state(game_state_data: Dictionary) -> void:
-	Global.game_state = game_state_data;
+	for key in Global.game_state.keys():
+		var data: Variant = game_state_data.get(key);
+		if data == null: continue;
+		
+		if typeof(data) == TYPE_ARRAY:
+			for i in Global.game_state[key].size():
+				Global.game_state[key][i] = data[i];
+		else: Global.game_state[key] = data;
 	

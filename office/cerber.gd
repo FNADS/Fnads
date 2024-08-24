@@ -46,12 +46,12 @@ func _process(_delta) -> void:
 	if !Global.time_manager.is_running: return
 	
 	#region Music
-	if music_playing: last_music_played = Global.time_manager.time_elapsed;
+	if music_playing: last_music_played = Global.time_manager.time;
 	#endregion
 	
 	#region Headpats
 	if Global.time_manager.hours_since_timestamp(oldest_headpat_expired) >= 0.5:
-		oldest_headpat_expired = Global.time_manager.time_elapsed;
+		oldest_headpat_expired = Global.time_manager.time;
 		if headpat_count > 0: headpat_count -= 1;
 	#endregion
 	
@@ -59,7 +59,7 @@ func _process(_delta) -> void:
 	
 	
 	#DEBUG
-	#print("Time Elapsed: ", Global.time_manager.time_elapsed);
+	#print("Time Elapsed: ", Global.time_manager.time);
 	#print("Music Playing: ", music_playing);
 	#print("Last Music: ", last_music_played);
 	#print("Last Headpat: ", last_headpat);
@@ -121,7 +121,7 @@ func _on_cursor_exit() -> void:
 
 func _on_headpat() -> void:
 	headpat_count += 1;
-	last_headpat = Global.time_manager.time_elapsed;
+	last_headpat = Global.time_manager.time;
 
 
 func _on_music_playing_changed(is_playing: bool) -> void: music_playing = is_playing;
