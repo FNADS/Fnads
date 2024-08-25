@@ -11,8 +11,8 @@ func save_game() -> void:
 	var save_file := FileAccess.open("user://save_data.json", FileAccess.WRITE);
 	save_file.store_string(save_str);
 	save_file.close();
-	
-	
+
+
 ## Tries to load the last saved gamestate[br]
 ## [br]
 ## Returns: success
@@ -28,8 +28,8 @@ func load_game() -> bool:
 	load_settings(load_data["settings"]);
 	load_game_state(load_data["game_state"]);
 	return true;
-	
-	
+
+
 func load_settings(settings_data: Dictionary) -> void:
 	for key in Global.settings.keys():
 		var data: Variant = settings_data.get(key);
@@ -43,8 +43,8 @@ func load_settings(settings_data: Dictionary) -> void:
 	Global.display_manager.set_window_mode(Global.settings["window_mode"] as int);
 	for i in AudioServer.bus_count:
 		AudioServer.set_bus_volume_db(i, linear_to_db(Global.settings["volume"][i] as float));
-		
-	
+
+
 func load_game_state(game_state_data: Dictionary) -> void:
 	for key in Global.game_state.keys():
 		var data: Variant = game_state_data.get(key);
@@ -54,4 +54,3 @@ func load_game_state(game_state_data: Dictionary) -> void:
 			for i in Global.game_state[key].size():
 				Global.game_state[key][i] = data[i];
 		else: Global.game_state[key] = data;
-	

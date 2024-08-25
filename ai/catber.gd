@@ -1,62 +1,68 @@
 class_name CatberAI extends AI
 
 
-const movement_level_up: int = 20;  #max ai level before move speed changes
-
-
-var ai_lv: int = 20;
-var move_wait_time: int = 3;
-var next_move_timestamp: float = 0.0;
-var inaccessible_rooms: Array[Global.room_mapping] = [Global.room_mapping.VENT];
 var rooms_to_destroy: Array[Global.room_mapping] = [];
-var current_room := Global.room_mapping.HALL1;
-var target_room: Global.room_mapping;
-
-
-#var count: int = 0; #DEBUG
+## The time that gets added to [code]next_move_timestamp[/code] when catber starts destroying a room.
+var destruction_duration: float = 5;
+var is_destroying: bool = false;
 
 
 func _init() -> void:
-	# Gets all available rooms and fills the rooms_to_destroy array unless they are on the inaccessible rooms list (Office excuded)
+	current_room = Global.room_mapping.HALL1;
+	inaccessible_rooms = [Global.room_mapping.VENT];
+	super._init();
+	
+	target_path = [current_room];
+	
+	# Gets all available rooms and fills the rooms_to_destroy array unless they are on the inaccessible rooms list (Office excluded)
 	for room in Global.room_mapping.values():
 		if inaccessible_rooms.has(room) || room == Global.room_mapping.OFFICE: continue;
 		else: rooms_to_destroy.append(room);
-		
-	target_room = current_room;
 
 
 func process(delta: float) -> void:
 	if Global.time_manager.time >= next_move_timestamp:
 		next_move_timestamp = Global.time_manager.time + move_wait_time;
 		
-		if target_room == current_room && !rooms_to_destroy.has(current_room):
-			#print("I'm getting a new room"); #DEBUG
-			#count = 0; #DEBUG
-			get_new_target_room(current_room);
-			#print("Count: ", count);
-		if target_room != current_room && randi_range(0, movement_level_up) < ai_lv: current_room = target_room;
-		if rooms_to_destroy.has(current_room): rooms_to_destroy.erase(current_room);
+		if current_room == Global.room_mapping.OFFICE:
+			Global.kill_player();
+			return;
 		
-		#DEBUG	
+		new_target_path();
+		move();
+		destroy_room();
+		
+		if current_room == Global.room_mapping.OFFICE: move_wait_time += kill_timer;
+		
+		#region DEBUG	
+		#print("Iteration Count: ", recursion_iteration_count);
+		#recursion_iteration_count = 0;
+		#print("Rooms Intact: ", rooms_to_destroy);
+		#print("Is Destroying:  ", is_destroying);
 		#print("Curr Room: ", current_room);
-		#print("Target Room: ", target_room);
-		#print("Rooms intact: ", rooms_to_destroy);
+		#print("Path: ", target_path);
 		#print();
+		#endregion
 
 
-func get_new_target_room(room: Global.room_mapping) -> void:
-	if rooms_to_destroy.is_empty(): target_room = Global.room_mapping.OFFICE;
-	else: target_room = get_closest_undestroyed_room(room, 1);
+## Removes the curren room from the list of destroyable rooms and [code]is_destroying[/code] is set to false again.
+func destroy_room() -> void:
+	if rooms_to_destroy.has(current_room) && is_destroying: 
+		is_destroying = false;
+		rooms_to_destroy.erase(current_room);
+	elif current_room == target_path[-1]:
+		is_destroying = true;
+		next_move_timestamp += destruction_duration;
 
 
-func get_closest_undestroyed_room(room: Global.room_mapping, distance: int) -> Global.room_mapping:
-	#count += 1; #DEBUG
-	if distance == 5: return room;
-	for connected_room in Global.room_connections[Global.room_mapping.find_key(room)]:
-		if rooms_to_destroy.has(connected_room):
-			return connected_room;
-	
-	for connected_room in Global.room_connections[Global.room_mapping.find_key(room)]:
-		return get_closest_undestroyed_room(connected_room, distance + 1);
-	
-	return target_room;
+## Decides what path she wants to search for: closest undestroyed room or office.
+func new_target_path() -> void:
+	if current_room == target_path[-1] && !rooms_to_destroy.has(current_room):
+		if rooms_to_destroy.is_empty(): new_path(current_room, check_for_office);
+		else:
+			available_paths.clear();
+			new_path(current_room, check_for_undestroyed_room);
+
+func check_for_undestroyed_room(connected_room: Global.room_mapping) -> bool: return rooms_to_destroy.has(connected_room);
+
+func check_for_office(connected_room: Global.room_mapping) -> bool: return connected_room == Global.room_mapping.OFFICE;

@@ -26,10 +26,6 @@ var last_headpat_state: int;
 var headpat_count_state: int;
 
 
-func kill_player(): #This is just placeholder function.
-	Global.time_manager.is_running = false;
-
-
 func _ready() -> void:
 	var cassette_player := $"../CassettePlayer" as CassettePlayer;
 	if cassette_player == null: printerr("Node CassettePlayer not found relative to Cerber");
@@ -94,7 +90,7 @@ func update_expression() -> void:
 	
 	cerber.frame = new_expression_frame;
 	if new_expression_frame >= 1: sfx_waking_up.play();
-	if new_expression_frame == 3: kill_player();
+	if new_expression_frame == 3: Global.kill_player();
 
 
 func start_headpat() -> void:

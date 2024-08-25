@@ -1,4 +1,4 @@
-extends Node
+class_name EvilAI extends AI
 
 
 var AI_Level :int= 20 #current ai level
