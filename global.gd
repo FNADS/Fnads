@@ -74,8 +74,8 @@ const room_connections: Dictionary = {
 };
 
 
-var settings: Dictionary;
-var game_state: Dictionary;
+var settings: Dictionary = init_default_settings();
+var game_state: Dictionary = init_default_game_state();
 var load_save_manager: LoadSaveManager = preload("res://manager/load_save_manager.gd").new();
 var display_manager: DisplayManager = preload("res://manager/display_manager.gd").new();
 var time_manager: TimeManager = preload("res://manager/time_manager.gd").new();
@@ -86,8 +86,6 @@ var cursor: Cursor = preload("res://cusrom_resources/cursor.gd").new(preload("re
 func _ready() -> void:
 	display_manager.adjust_max_fps();
 	
-	init_default_settings();
-	init_default_game_state();
 	load_save_manager.load_game();
 	load_save_manager.save_game();
 
@@ -97,8 +95,8 @@ func _process(delta) -> void:
 	ai_manager.process(delta);
 
 
-## Sets the settings dict to the default values
-func init_default_settings() -> void:
+## Returns the settings dict with its default values
+func init_default_settings() -> Dictionary:
 	var default_settings: Dictionary = {
 		"show_splash_screen": true,
 		"window_mode": 1,
@@ -106,11 +104,19 @@ func init_default_settings() -> void:
 	}
 	for i in AudioServer.bus_count: default_settings["volume"].append(1);
 	
-	settings = default_settings;
+	return default_settings;
 
 
-## Sets the game_state dict to the default values
-func init_default_game_state():
-	game_state = {
+## Returns the game_state dict with its default values
+func init_default_game_state() -> Dictionary:
+	var game_state: Dictionary = {
 		"unlocked_nights": 1, 
 	};
+	
+	return game_state;
+
+
+# PLACEHOLDER FUNCTION
+func kill_player():
+	Global.time_manager.is_running = false;
+	print("\nYou died\n");
