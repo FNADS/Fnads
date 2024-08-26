@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkwn1e155qr0p"]
+
+[ext_resource type="Script" path="res://menu/level_selection.gd" id="1_0kh7w"]
+[ext_resource type="PackedScene" uid="uid://dlawg7jtga6r7" path="res://menu/carousel_menu.tscn" id="2_ehtxp"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kh7w")
+
+[node name="CarouselMenu" parent="." instance=ExtResource("2_ehtxp")]
+layout_mode = 1
