@@ -5,9 +5,9 @@ class_name CarouselMenuItem extends PanelContainer
 
 var is_current: bool = false;
 
-@onready var nBackground_NotCurrent = $Background/NotCurrent;
-@onready var nBackground_Current = $Background/Current;
-@onready var nCurrentLayer = $CurrentLayer;
+@onready var n_background_not_current := $Background/NotCurrent as PanelContainer;
+@onready var n_background_current := $Background/Current as PanelContainer;
+@onready var n_current_layer := $CurrentLayer as Control;
 
 func _ready() -> void:
 	set_is_current(is_current);
@@ -20,6 +20,6 @@ func set_is_current(p_is_current: bool) -> void:
 	
 	var tween: Tween = create_tween().set_parallel();
 	
-	tween.tween_property(nBackground_NotCurrent, "modulate:a", int(not p_is_current), animation_duration * 2)
-	tween.tween_property(nBackground_Current, "modulate:a", int(p_is_current), animation_duration * 2)
-	tween.tween_property(nCurrentLayer, "modulate:a", int(p_is_current), animation_duration * 2)
+	tween.tween_property(n_background_not_current, "modulate:a", int(not p_is_current), animation_duration * 2)
+	tween.tween_property(n_background_current, "modulate:a", int(p_is_current), animation_duration * 2)
+	tween.tween_property(n_current_layer, "modulate:a", int(p_is_current), animation_duration * 2)
