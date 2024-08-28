@@ -58,10 +58,10 @@ func destroy_room() -> void:
 ## Decides what path she wants to search for: closest undestroyed room or office.
 func new_target_path() -> void:
 	if current_room == target_path[-1] && !rooms_to_destroy.has(current_room):
-		if rooms_to_destroy.is_empty(): new_path(current_room, check_for_office);
+		if rooms_to_destroy.is_empty(): generate_new_path(current_room, check_for_office);
 		else:
 			available_paths.clear();
-			new_path(current_room, check_for_undestroyed_room);
+			generate_new_path(current_room, check_for_undestroyed_room);
 
 func check_for_undestroyed_room(connected_room: Global.room_mapping) -> bool: return rooms_to_destroy.has(connected_room);
 

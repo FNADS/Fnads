@@ -27,7 +27,7 @@ func _init() -> void:
 ## - [code]checker[/code]: a callable comparing the connected rooms with specified target rooms[br]
 ## - [code]path[/code]: NO MANUAL INPUT NEEDED[br]
 ## - [code]distance[/code]: NO MANUAL INPUT NEEDED
-func new_path(room: Global.room_mapping, checker: Callable, path: Array[Global.room_mapping] = [], distance: int = 1) -> void:
+func generate_new_path(room: Global.room_mapping, checker: Callable, path: Array[Global.room_mapping] = [], distance: int = 1) -> void:
 	if distance > shortest_path_lenght: return;
 	#recursion_iteration_count += 1; #DEBUG
 	var has_direct_neighbours: bool = false;
@@ -43,7 +43,7 @@ func new_path(room: Global.room_mapping, checker: Callable, path: Array[Global.r
 		for connected_room in Global.room_connections[Global.room_mapping.find_key(room)]:
 			var new_path := path.duplicate();
 			new_path.append(connected_room);
-			new_path(connected_room, checker, new_path, distance + 1);
+			generate_new_path(connected_room, checker, new_path, distance + 1);
 	
 	if distance == 1:
 		var shortest_paths_available = available_paths.filter(func(available_path: Array): return available_path.size() <= shortest_path_lenght);
