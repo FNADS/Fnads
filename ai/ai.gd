@@ -53,7 +53,9 @@ func generate_new_path(room: Global.room_mapping, checker: Callable, path: Array
 
 
 ## Move the ai along the path until she's in her target room
-func move() -> void:
+func move() -> bool:
 	if current_room != target_path[-1] && randi_range(0, max_ai_level) < ai_lv:
 		if current_room == target_path[0]: target_path.remove_at(0);
 		current_room = target_path[0];
+		return true;
+	else: return false;
