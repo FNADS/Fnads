@@ -1,11 +1,11 @@
 class_name CamButton extends Button
 
 
-var cam_id: int;
+var cam_id: Global.room_mapping;
 
 
 func _ready() -> void:
-	cam_id = Global.room_mapping[self.text];
+	cam_id = Global.room_mapping.get(self.text);
 	
 	match tr(self.text).length():
 		0: printerr("Camera button name cannot be empty!");
@@ -15,7 +15,7 @@ func _ready() -> void:
 		_: add_theme_font_size_override("font_size", 22);
 
 
-signal cam_selected(id);
+signal cam_selected(id: Global.room_mapping);
 
 
 func _on_pressed() -> void:
