@@ -31,8 +31,10 @@ func _process(delta):
 
 
 func change_cam(cam_id: Global.room_mapping) -> void:
-	var old_cam := selected_cam
-	(cam_map.get_node((Global.room_mapping.find_key(selected_cam) as String).to_pascal_case()) as CamButton).disabled = false;
+	var old_cam := selected_cam	
+	var cam_node_name := (Global.room_mapping.find_key(selected_cam) as String).to_pascal_case();
+	var cam := cam_map.get_node(cam_node_name) as CamButton;
+	cam.deselect();
 	selected_cam = cam_id;
 	#cam_display.frame = selected_cam
 	print("cam changed, old: ",old_cam," new: ",selected_cam)
