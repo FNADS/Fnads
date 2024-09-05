@@ -9,10 +9,15 @@ var is_destroying: bool = false;
 
 func _init() -> void:
 	current_room = Global.room_mapping.HALL1;
-	inaccessible_rooms = [Global.room_mapping.VENT];
 	super._init();
-	
 	target_path = [current_room];
+	inaccessible_rooms = [
+		Global.room_mapping.VENT1,
+		Global.room_mapping.VENT2,
+		Global.room_mapping.VENT3,
+		Global.room_mapping.VENT4,
+		Global.room_mapping.VENT5,
+	];
 	
 	# Gets all available rooms and fills the rooms_to_destroy array unless they are on the inaccessible rooms list (Office excluded)
 	for room in Global.room_mapping.values():
