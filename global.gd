@@ -18,39 +18,63 @@ enum room_mapping {
 	HALL1 = 12,
 	HALL2 = 13,
 	HALL3 = 14,
-	VENT = 15,
-};
-
-
-enum vent_mappings {
-	#TODO add vent mappings
+	VENT1 = 15,
+	VENT2 = 16,
+	VENT3 = 17,
+	VENT4 = 18,
+	VENT5 = 19,
 };
 
 
 const room_connections: Dictionary = {
-	"OFFICE" : [room_mapping.HALL3],
-	"STAFF" : [room_mapping.HALL3],
-	"BATHROOM" : [room_mapping.HALL3],
+	"OFFICE" : [
+		room_mapping.HALL3,
+		room_mapping.VENT4,
+	],
+	"STAFF" : [
+		room_mapping.HALL3,
+		room_mapping.VENT5
+	],
+	"BATHROOM" : [
+		room_mapping.HALL3,
+		room_mapping.VENT3,
+	],
 	"JC" : [room_mapping.HALL3],
 	"ART" : [room_mapping.HALL3],
 	"CAFE" : [
 		room_mapping.KITCHEN,
-		room_mapping.HALL2
+		room_mapping.HALL2,
 	],
-	"KITCHEN" : [room_mapping.CAFE],
+	"KITCHEN" : [
+		room_mapping.CAFE,
+		room_mapping.VENT2,
+	],
 	"GYM" : [
 		room_mapping.HALL1,
-		room_mapping.HALL3
+		room_mapping.HALL3,
+		room_mapping.VENT1,
 	],
-	"C1" : [room_mapping.HALL1],
-	"C2" : [room_mapping.HALL1],
-	"C3" : [room_mapping.HALL3],
-	"C4" : [room_mapping.HALL3],
+	"C1" : [
+		room_mapping.HALL1,
+		room_mapping.VENT1,
+	],
+	"C2" : [
+		room_mapping.HALL1,
+		room_mapping.VENT1,
+	],
+	"C3" : [
+		room_mapping.HALL3,
+		room_mapping.VENT1,
+	],
+	"C4" : [
+		room_mapping.HALL3,
+		room_mapping.VENT1,
+	],
 	"HALL1" : [
 		room_mapping.HALL2,
 		room_mapping.C1,
 		room_mapping.C2,
-		room_mapping.GYM
+		room_mapping.GYM,
 	],
 	"HALL2" : [
 		room_mapping.HALL1,
@@ -66,10 +90,32 @@ const room_connections: Dictionary = {
 		room_mapping.C4,
 		room_mapping.OFFICE,
 		room_mapping.STAFF,
-		room_mapping.GYM
+		room_mapping.GYM,
 	],
-	"VENT" : [
-		#TODO add vent connectsions
+	"VENT1" : [
+		room_mapping.C1,
+		room_mapping.C2,
+		room_mapping.C3,
+		room_mapping.C4,
+		room_mapping.GYM,
+	],
+	"VENT2" : [
+		room_mapping.KITCHEN,
+		room_mapping.VENT3,
+		room_mapping.VENT4,
+		room_mapping.VENT5,
+	],
+	"VENT3" : [
+		room_mapping.BATHROOM,
+		room_mapping.VENT2,
+	],
+	"VENT4" : [
+		room_mapping.OFFICE,
+		room_mapping.VENT2,
+	],
+	"VENT5" : [
+		room_mapping.STAFF,
+		room_mapping.VENT2,
 	],
 };
 

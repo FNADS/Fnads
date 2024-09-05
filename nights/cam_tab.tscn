@@ -191,15 +191,6 @@ offset_bottom = 174.0
 action_mode = 0
 text = "JC"
 
-[node name="Vent" parent="CamMap" instance=ExtResource("6_n3ry7")]
-layout_mode = 1
-offset_left = -374.5
-offset_top = 154.0
-offset_right = -325.5
-offset_bottom = 186.0
-action_mode = 0
-text = "VENT"
-
 [node name="Staff" parent="CamMap" instance=ExtResource("6_n3ry7")]
 layout_mode = 1
 offset_left = 181.5
