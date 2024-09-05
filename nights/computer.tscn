@@ -70,7 +70,6 @@ position = Vector2(-0.5, -34)
 shape = SubResource("RectangleShape2D_jdqre")
 
 [node name="ComputerScreen" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TabContainer" type="TabContainer" parent="ComputerScreen"]
 anchors_preset = 15
