@@ -9,10 +9,9 @@ var time_in_cams: Dictionary = {};
 
 
 func _ready() -> void:
-	for cam: CamButton in cam_map.get_children():
-		var cam_button := cam_map.get_node(cam.text.to_pascal_case()) as CamButton;
-		if cam_button == null: continue;
-		cam_button.connect("cam_selected", change_cam);
+	for cam in cam_map.get_children():
+		if !(cam is CamButton): continue;
+		cam.connect("cam_selected", change_cam);
 		time_in_cams[cam.text] = 0.0;
 		# variation.append(0)  This has nothing to do in the cam tab skript
 

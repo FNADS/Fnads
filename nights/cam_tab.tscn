@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8vbw6wjq4or3"]
+[gd_scene load_steps=16 format=3 uid="uid://b8vbw6wjq4or3"]
 
 [ext_resource type="Texture2D" uid="uid://c5fq3ufsmnwct" path="res://_placeholder/placeholder_office.png" id="1_00brd"]
 [ext_resource type="Script" path="res://nights/cam_tab.gd" id="1_7sa5i"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c4p1vsuh1whm5" path="res://_placeholder/placeholder_cassette_player.png" id="8_yllrn"]
 [ext_resource type="Texture2D" uid="uid://2bmls0ot7e0x" path="res://_placeholder/placeholder_office_desk.png" id="9_h5kfy"]
 [ext_resource type="Texture2D" uid="uid://cwi7pi3mmw6cc" path="res://_placeholder/placeholder_pc.png" id="10_i4hiy"]
+[ext_resource type="FontFile" uid="uid://05i75b66fdl" path="res://assets/font/vividly_extended.ttf" id="14_lnnir"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qxnr"]
 animations = [{
@@ -82,10 +83,10 @@ sprite_frames = SubResource("SpriteFrames_6qxnr")
 
 [node name="CamMap" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1151.0
-offset_top = 465.0
-offset_right = 1976.0
-offset_bottom = 1005.0
+offset_left = 1143.0
+offset_top = 493.0
+offset_right = 1968.0
+offset_bottom = 1033.0
 texture = ExtResource("5_ogg8e")
 expand_mode = 1
 stretch_mode = 4
@@ -192,10 +193,10 @@ text = "JC"
 
 [node name="Vent" parent="CamMap" instance=ExtResource("6_n3ry7")]
 layout_mode = 1
-offset_left = -140.5
-offset_top = 213.0
-offset_right = -91.5
-offset_bottom = 245.0
+offset_left = -374.5
+offset_top = 154.0
+offset_right = -325.5
+offset_bottom = 186.0
 action_mode = 0
 text = "VENT"
 
@@ -207,3 +208,31 @@ offset_right = 230.5
 offset_bottom = 205.0
 action_mode = 0
 text = "STAFF"
+
+[node name="ColorRect" type="ColorRect" parent="CamMap"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.530909
+anchor_top = 0.805556
+anchor_right = 0.546667
+anchor_bottom = 0.82963
+offset_left = 3.05176e-05
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CamMap/ColorRect"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -22.0
+offset_right = 25.0
+offset_bottom = -2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("14_lnnir")
+theme_override_font_sizes/font_size = 28
+text = "YOU"
+horizontal_alignment = 1
