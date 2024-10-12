@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://62i4exqcp5by"]
+
+[ext_resource type="Texture2D" uid="uid://dxlwudfmw8bii" path="res://assets/sprites/laptop.png" id="1_3mr5q"]
+[ext_resource type="Script" path="res://game/laptop/laptop.gd" id="1_qk3je"]
+[ext_resource type="FontFile" uid="uid://bedbafqcdtba4" path="res://assets/fonts/superstar_memesbruh03.ttf" id="3_vc7d4"]
+
+[node name="Laptop" type="Node2D"]
+script = ExtResource("1_qk3je")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.388626, 0.388626)
+texture = ExtResource("1_3mr5q")
+
+[node name="LaptopBtn" type="Button" parent="."]
+offset_left = -65.0
+offset_top = -73.0
+offset_right = 87.0
+offset_bottom = 37.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_disabled_color = Color(0.738912, 0.151791, 0.376543, 1)
+theme_override_colors/font_color = Color(0.737255, 0.152941, 0.376471, 1)
+theme_override_fonts/font = ExtResource("3_vc7d4")
+theme_override_font_sizes/font_size = 32
+
+[connection signal="pressed" from="LaptopBtn" to="." method="show_screen" binds= ["desktop"]]

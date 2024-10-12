@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxf28g51fq6r4"]
+
+[ext_resource type="Script" path="res://game/breakers/breakers.gd" id="1_lg0gh"]
+[ext_resource type="Texture2D" uid="uid://t68o0jrdcskw" path="res://assets/sprites/breakers_door.png" id="1_yq5kk"]
+[ext_resource type="FontFile" uid="uid://bedbafqcdtba4" path="res://assets/fonts/superstar_memesbruh03.ttf" id="7_umqfd"]
+
+[node name="Breakers" type="Node2D"]
+script = ExtResource("1_lg0gh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.170026, 0.170026)
+texture = ExtResource("1_yq5kk")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -126.0
+offset_top = -109.0
+offset_right = 120.0
+offset_bottom = 108.0
+theme_type_variation = &"FlatButton"
+
+[node name="BreakersScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="BreakersScreen"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BreakersScreen/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.605274, 0.605274, 0.605274, 1)
+
+[node name="BackBtn" type="Button" parent="BreakersScreen/Control"]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 23.0
+offset_right = 1126.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("7_umqfd")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BreakersScreen/Control"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 87.0
+offset_right = 1360.0
+offset_bottom = 875.0
+scale = Vector2(0.617388, 0.617388)
+
+[connection signal="pressed" from="Button" to="." method="open_breakers" binds= [true]]
+[connection signal="pressed" from="BreakersScreen/Control/BackBtn" to="." method="open_breakers" binds= [false]]

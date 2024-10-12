@@ -1,0 +1,257 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpny7w44q3lst"]
+
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_coeg4"]
+[ext_resource type="FontFile" uid="uid://bedbafqcdtba4" path="res://assets/fonts/superstar_memesbruh03.ttf" id="2_fvxlv"]
+[ext_resource type="Texture2D" uid="uid://jty2eo47g240" path="res://assets/sprites/rec_icon.png" id="3_t1odi"]
+[ext_resource type="Texture2D" uid="uid://b53qler8hga2n" path="res://assets/sprites/paint.png" id="4_e7svf"]
+[ext_resource type="Texture2D" uid="uid://duyswy50vspgt" path="res://assets/sprites/map.png" id="5_5tula"]
+[ext_resource type="Script" path="res://ui/monitoring/cameras.gd" id="5_sbjt5"]
+
+[node name="UI" type="CanvasLayer" groups=["UI"]]
+script = ExtResource("1_coeg4")
+
+[node name="Desktop" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Desktop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.237539, 0.237539, 0.237539, 1)
+
+[node name="MonitoringIcon" type="Button" parent="Desktop"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 77.0
+offset_right = 322.0
+offset_bottom = 257.0
+scale = Vector2(0.882722, 0.882722)
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_fvxlv")
+theme_override_font_sizes/font_size = 32
+
+[node name="TextureRect" type="TextureRect" parent="Desktop/MonitoringIcon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -55.0
+offset_right = 298.5
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.438065, 0.438065)
+texture = ExtResource("3_t1odi")
+
+[node name="Label" type="Label" parent="Desktop/MonitoringIcon"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -32.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_fvxlv")
+theme_override_font_sizes/font_size = 32
+text = "Monitoring System"
+
+[node name="PaintIcon" type="Button" parent="Desktop"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 346.0
+offset_right = 321.0
+offset_bottom = 526.0
+scale = Vector2(0.882722, 0.882722)
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_fvxlv")
+theme_override_font_sizes/font_size = 32
+
+[node name="TextureRect" type="TextureRect" parent="Desktop/PaintIcon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.8499
+offset_top = -110.391
+offset_right = 489.15
+offset_bottom = 598.609
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.224309, 0.224309)
+texture = ExtResource("4_e7svf")
+
+[node name="Label" type="Label" parent="Desktop/PaintIcon"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -32.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_fvxlv")
+theme_override_font_sizes/font_size = 32
+text = "Paint"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackBtn" type="Button" parent="Desktop"]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 23.0
+offset_right = 1126.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("2_fvxlv")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Cameras" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_sbjt5")
+color1 = Color(0.571818, 0.330563, 0.609928, 1)
+color2 = Color(0.791598, 0.459012, 0.482206, 1)
+color3 = Color(0.824486, 0.543408, 0.911971, 1)
+color4 = Color(0.333651, 0.111905, 0.379917, 1)
+color5 = Color(0.499491, 0.0876471, 0.423229, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Cameras"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.126959, 0.0671149, 0.15793, 1)
+
+[node name="Map" type="TextureRect" parent="Cameras"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 86.0
+offset_right = 3800.0
+offset_bottom = 2311.0
+scale = Vector2(0.217742, 0.217742)
+texture = ExtResource("5_5tula")
+
+[node name="Button" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 482.0
+offset_right = 1254.0
+offset_bottom = 964.0
+
+[node name="Button2" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 1024.0
+offset_right = 1254.0
+offset_bottom = 1258.0
+
+[node name="Button3" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 487.0
+offset_right = 1506.0
+offset_bottom = 1254.0
+
+[node name="Button4" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 1607.0
+offset_top = 482.0
+offset_right = 1961.0
+offset_bottom = 840.0
+
+[node name="Button5" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 1612.0
+offset_top = 881.779
+offset_right = 1966.0
+offset_bottom = 1239.78
+
+[node name="Button6" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 2094.22
+offset_top = 482.223
+offset_right = 2448.22
+offset_bottom = 840.223
+
+[node name="Button7" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 2098.82
+offset_top = 895.556
+offset_right = 2452.82
+offset_bottom = 1253.56
+
+[node name="Button8" type="Button" parent="Cameras/Map"]
+layout_mode = 0
+offset_left = 2544.0
+offset_top = 487.0
+offset_right = 3095.0
+offset_bottom = 1254.0
+
+[node name="BackBtn" type="Button" parent="Cameras"]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 23.0
+offset_right = 1126.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("2_fvxlv")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="Cameras"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 118.0
+offset_right = 467.0
+offset_bottom = 399.0
+color = Color(0.27171, 0.163794, 0.324938, 1)
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Settings" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Desktop/MonitoringIcon" to="." method="show_screen" binds= ["Cameras"]]
+[connection signal="pressed" from="Desktop/BackBtn" to="." method="hide_ui"]
+[connection signal="pressed" from="Cameras/Map/Button" to="Cameras" method="show_camera" binds= ["1"]]
+[connection signal="pressed" from="Cameras/Map/Button2" to="Cameras" method="show_camera" binds= ["2"]]
+[connection signal="pressed" from="Cameras/Map/Button3" to="Cameras" method="show_camera" binds= ["3"]]
+[connection signal="pressed" from="Cameras/Map/Button4" to="Cameras" method="show_camera" binds= ["4"]]
+[connection signal="pressed" from="Cameras/Map/Button5" to="Cameras" method="show_camera" binds= ["5"]]
+[connection signal="pressed" from="Cameras/Map/Button6" to="Cameras" method="show_camera" binds= ["1"]]
+[connection signal="pressed" from="Cameras/Map/Button7" to="Cameras" method="show_camera" binds= ["2"]]
+[connection signal="pressed" from="Cameras/Map/Button8" to="Cameras" method="show_camera" binds= ["3"]]
+[connection signal="pressed" from="Cameras/BackBtn" to="." method="hide_ui"]

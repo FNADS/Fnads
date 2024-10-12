@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1fu1gm2v42gq"]
+
+[ext_resource type="Script" path="res://game/breakers/breaker.gd" id="1_8p3sl"]
+[ext_resource type="Texture2D" uid="uid://bjmxp07fahd5q" path="res://assets/sprites/breaker_on.png" id="2_wwkqy"]
+[ext_resource type="Texture2D" uid="uid://dqobohb3p04ap" path="res://assets/sprites/breaker_off.png" id="3_cgxk6"]
+[ext_resource type="Texture2D" uid="uid://dorjoke2d4i3i" path="res://assets/sprites/breaker.png" id="4_wd4ov"]
+
+[node name="Breaker" type="Control"]
+custom_minimum_size = Vector2(288, 0)
+layout_mode = 3
+anchor_right = 0.25
+anchor_bottom = 1.25
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8p3sl")
+onTexture = ExtResource("2_wwkqy")
+offTexture = ExtResource("3_cgxk6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Breaker2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -394.0
+offset_right = 123.0
+offset_bottom = 394.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wd4ov")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -118.0
+offset_right = 85.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("2_wwkqy")
+
+[connection signal="pressed" from="Button" to="." method="change_state"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cilypl2frtix8"]
+
+[ext_resource type="Texture2D" uid="uid://pa7y82baefy8" path="res://assets/sprites/table.png" id="1_el0mt"]
+[ext_resource type="Script" path="res://game/game.gd" id="1_j7dkl"]
+[ext_resource type="PackedScene" uid="uid://62i4exqcp5by" path="res://game/laptop/laptop.tscn" id="2_vnjt3"]
+[ext_resource type="PackedScene" uid="uid://cxf28g51fq6r4" path="res://game/breakers/breakers.tscn" id="3_ptn6x"]
+[ext_resource type="FontFile" uid="uid://bedbafqcdtba4" path="res://assets/fonts/superstar_memesbruh03.ttf" id="5_2s52g"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="5_uxrgy"]
+
+[node name="Game" type="Node2D" groups=["Game"]]
+script = ExtResource("1_j7dkl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_uxrgy")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -546.0
+offset_top = -301.0
+offset_right = -285.0
+offset_bottom = -235.0
+theme_override_fonts/font = ExtResource("5_2s52g")
+theme_override_font_sizes/font_size = 32
+text = "Break Power"
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.3, 1.2)
+scroll_offset = Vector2(3, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-60.501, 276)
+scale = Vector2(0.319484, 0.319484)
+texture = ExtResource("1_el0mt")
+
+[node name="Laptop" parent="Parallax2D" instance=ExtResource("2_vnjt3")]
+position = Vector2(-166.501, 192)
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.9, 0.8)
+
+[node name="Breakers" parent="Parallax2D2" groups=["Breakers"] instance=ExtResource("3_ptn6x")]
+position = Vector2(435, -61)
+
+[connection signal="pressed" from="Button" to="." method="break_power" binds= [0]]
