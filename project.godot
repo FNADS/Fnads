@@ -11,13 +11,31 @@ config_version=5
 [application]
 
 config/name="Fnads"
+config/tags=PackedStringArray("five_nights_at_dog_school", "fnads")
 run/main_scene="res://ui/main_menu/main_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
+
+[audio]
+
+buses/default_bus_layout="res://audio/default_buses.tres"
 
 [autoload]
 
 UIManager="*res://ui/ui.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [rendering]
 

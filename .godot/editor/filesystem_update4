@@ -1,6 +1,2 @@
-res://ui/ui.tscn
 res://ui/main_menu/main_menu.tscn
 res://game/game.tscn
-res://game/laptop/laptop.tscn
-res://game/breakers/breakers.tscn
-res://game/laptop/laptop.gd
