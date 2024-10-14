@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxf28g51fq6r4"]
 
-[ext_resource type="Script" path="res://game/breakers/breakers.gd" id="1_lg0gh"]
-[ext_resource type="Texture2D" uid="uid://t68o0jrdcskw" path="res://assets/sprites/breakers_door.png" id="1_yq5kk"]
+[ext_resource type="Script" path="res://game/breaker_box/breakers.gd" id="1_lg0gh"]
+[ext_resource type="Texture2D" uid="uid://dc7s2egqipxwc" path="res://assets/placeholder_sprites/breaker_box.png" id="2_pr1ya"]
 [ext_resource type="FontFile" uid="uid://bedbafqcdtba4" path="res://assets/fonts/superstar_memesbruh03.ttf" id="7_umqfd"]
 
 [node name="Breakers" type="Node2D"]
 script = ExtResource("1_lg0gh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.170026, 0.170026)
-texture = ExtResource("1_yq5kk")
+scale = Vector2(0.464789, 0.464789)
+texture = ExtResource("2_pr1ya")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -126.0
-offset_top = -109.0
-offset_right = 120.0
-offset_bottom = 108.0
+offset_left = -139.0
+offset_top = -99.0
+offset_right = 140.0
+offset_bottom = 98.0
 theme_type_variation = &"FlatButton"
 
 [node name="BreakersScreen" type="CanvasLayer" parent="."]

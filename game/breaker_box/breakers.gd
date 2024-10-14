@@ -5,7 +5,7 @@ extends Node2D
 
 @export var breakers_count: int = 4
 
-var breaker = preload("res://game/breakers/breaker.tscn")
+var breaker = preload("res://game/breaker_box/breaker.tscn")
 var states = []
 var is_power_on = true
 var rng = RandomNumberGenerator.new()

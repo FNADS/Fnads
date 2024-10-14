@@ -11,6 +11,7 @@
 script = ExtResource("1_coeg4")
 
 [node name="Desktop" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -231,18 +232,6 @@ offset_top = 118.0
 offset_right = 467.0
 offset_bottom = 399.0
 color = Color(0.27171, 0.163794, 0.324938, 1)
-
-[node name="MainMenu" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Settings" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="pressed" from="Desktop/MonitoringIcon" to="." method="show_screen" binds= ["Cameras"]]
 [connection signal="pressed" from="Desktop/BackBtn" to="." method="hide_ui"]

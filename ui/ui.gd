@@ -7,6 +7,7 @@ func _ready():
 	for screen in children:
 		if screen is Control:
 			screens.push_back(screen)
+	hide_ui()
 
 func hide_ui():
 	for screen in screens:
