@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpny7w44q3lst"]
+[gd_scene load_steps=8 format=3 uid="uid://bpny7w44q3lst"]
 
 [ext_resource type="Script" path="res://ui/ui.gd" id="1_coeg4"]
 [ext_resource type="FontFile" uid="uid://bedbafqcdtba4" path="res://assets/fonts/superstar_memesbruh03.ttf" id="2_fvxlv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b53qler8hga2n" path="res://assets/sprites/paint.png" id="4_e7svf"]
 [ext_resource type="Texture2D" uid="uid://duyswy50vspgt" path="res://assets/sprites/map.png" id="5_5tula"]
 [ext_resource type="Script" path="res://ui/monitoring/cameras.gd" id="5_sbjt5"]
+[ext_resource type="PackedScene" uid="uid://c5ejlyes0v27k" path="res://ui/settings/settings.tscn" id="7_c42k5"]
 
 [node name="UI" type="CanvasLayer" groups=["UI"]]
 script = ExtResource("1_coeg4")
@@ -232,6 +233,9 @@ offset_top = 118.0
 offset_right = 467.0
 offset_bottom = 399.0
 color = Color(0.27171, 0.163794, 0.324938, 1)
+
+[node name="Settings" parent="." instance=ExtResource("7_c42k5")]
+visible = false
 
 [connection signal="pressed" from="Desktop/MonitoringIcon" to="." method="show_screen" binds= ["Cameras"]]
 [connection signal="pressed" from="Desktop/BackBtn" to="." method="hide_ui"]

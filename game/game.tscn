@@ -11,6 +11,7 @@
 script = ExtResource("1_j7dkl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 1
 script = ExtResource("5_uxrgy")
 
 [node name="Button" type="Button" parent="."]

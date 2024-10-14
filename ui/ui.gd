@@ -19,3 +19,12 @@ func show_screen(screen_name: String):
 		if screen.name == screen_name:
 			screen.show()
 			return
+
+func toggle_settings():
+	for screen in screens:
+		if screen.name == 'Settings':
+			if screen.visible:
+				screen.hide()
+			else:
+				screen.show()
+			return

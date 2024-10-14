@@ -6,3 +6,5 @@ res://game/breaker_box/breakers.gd
 res://ui/main_menu/main_menu.tscn
 res://ui/ui.tscn
 res://ui/ui.gd
+res://ui/settings/settings.gd
+res://ui/settings/settings.tscn
