@@ -1,2 +1,10 @@
-res://ui/main_menu/main_menu.tscn
 res://game/game.tscn
+res://game/laptop/laptop.tscn
+res://game/laptop/laptop.gd
+res://game/breaker_box/breakers.tscn
+res://game/breaker_box/breakers.gd
+res://ui/main_menu/main_menu.tscn
+res://ui/ui.tscn
+res://ui/ui.gd
+res://ui/settings/settings.gd
+res://ui/settings/settings.tscn

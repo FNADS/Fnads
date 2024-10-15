@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cilypl2frtix8"]
 
-[ext_resource type="Texture2D" uid="uid://pa7y82baefy8" path="res://assets/sprites/table.png" id="1_el0mt"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_j7dkl"]
 [ext_resource type="PackedScene" uid="uid://62i4exqcp5by" path="res://game/laptop/laptop.tscn" id="2_vnjt3"]
-[ext_resource type="PackedScene" uid="uid://cxf28g51fq6r4" path="res://game/breakers/breakers.tscn" id="3_ptn6x"]
+[ext_resource type="PackedScene" uid="uid://cxf28g51fq6r4" path="res://game/breaker_box/breakers.tscn" id="3_ptn6x"]
+[ext_resource type="Texture2D" uid="uid://ot3hsaqm6sab" path="res://assets/placeholder_sprites/table.png" id="4_6af7v"]
 [ext_resource type="FontFile" uid="uid://bedbafqcdtba4" path="res://assets/fonts/superstar_memesbruh03.ttf" id="5_2s52g"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="5_uxrgy"]
 
@@ -11,6 +11,7 @@
 script = ExtResource("1_j7dkl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 1
 script = ExtResource("5_uxrgy")
 
 [node name="Button" type="Button" parent="."]
@@ -26,13 +27,14 @@ text = "Break Power"
 scroll_scale = Vector2(1.3, 1.2)
 scroll_offset = Vector2(3, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(-60.501, 276)
-scale = Vector2(0.319484, 0.319484)
-texture = ExtResource("1_el0mt")
+[node name="Table" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(0.907418, 416.903)
+scale = Vector2(0.613429, 0.613429)
+texture = ExtResource("4_6af7v")
 
 [node name="Laptop" parent="Parallax2D" instance=ExtResource("2_vnjt3")]
-position = Vector2(-166.501, 192)
+position = Vector2(-320, 263)
+scale = Vector2(1.48577, 1.48577)
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.9, 0.8)

@@ -1,3 +1,5 @@
+Button
+ColorRect
 Control
 TextureRect
 TabContainer
@@ -5,9 +7,7 @@ Parallax2D
 ParallaxBackground
 ParallaxLayer
 CanvasLayer
-Button
 HBoxContainer
-ColorRect
 TextureButton
 Sprite2D
 Label

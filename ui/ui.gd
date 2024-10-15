@@ -7,6 +7,7 @@ func _ready():
 	for screen in children:
 		if screen is Control:
 			screens.push_back(screen)
+	hide_ui()
 
 func hide_ui():
 	for screen in screens:
@@ -17,4 +18,13 @@ func show_screen(screen_name: String):
 	for screen in screens:
 		if screen.name == screen_name:
 			screen.show()
+			return
+
+func toggle_settings():
+	for screen in screens:
+		if screen.name == 'Settings':
+			if screen.visible:
+				screen.hide()
+			else:
+				screen.show()
 			return
