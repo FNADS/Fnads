@@ -1,5 +1,6 @@
-Button
 ColorRect
+Window
+Button
 Control
 TextureRect
 TabContainer
@@ -11,4 +12,3 @@ HBoxContainer
 TextureButton
 Sprite2D
 Label
-Camera2D
