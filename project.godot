@@ -24,10 +24,6 @@ config/windows_native_icon="res://icon.ico"
 
 buses/default_bus_layout="res://audio/default_buses.tres"
 
-[autoload]
-
-UIManager="*res://ui/ui.tscn"
-
 [display]
 
 window/size/viewport_width=1920

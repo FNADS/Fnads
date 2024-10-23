@@ -1,0 +1,7 @@
+res://ui/apps/email/Email.tscn
+res://ui/main_menu/main_menu.tscn
+res://ui/ui.tscn
+res://game/game.tscn
+res://game/breaker_box/breakers.tscn
+res://game/game.gd
+res://game/breaker_box/breakers.gd

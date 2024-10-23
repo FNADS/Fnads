@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cilypl2frtix8"]
+[gd_scene load_steps=8 format=3 uid="uid://cilypl2frtix8"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_j7dkl"]
+[ext_resource type="PackedScene" uid="uid://bpny7w44q3lst" path="res://ui/ui.tscn" id="2_0jrjj"]
 [ext_resource type="PackedScene" uid="uid://62i4exqcp5by" path="res://game/laptop/laptop.tscn" id="2_vnjt3"]
 [ext_resource type="PackedScene" uid="uid://cxf28g51fq6r4" path="res://game/breaker_box/breakers.tscn" id="3_ptn6x"]
 [ext_resource type="Texture2D" uid="uid://ot3hsaqm6sab" path="res://assets/placeholder_sprites/table.png" id="4_6af7v"]
@@ -9,6 +10,8 @@
 
 [node name="Game" type="Node2D" groups=["Game"]]
 script = ExtResource("1_j7dkl")
+
+[node name="UI" parent="." instance=ExtResource("2_0jrjj")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 1

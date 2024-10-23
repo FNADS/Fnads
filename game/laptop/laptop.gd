@@ -4,8 +4,11 @@ extends Node2D
 @onready var btn = $LaptopBtn
 @onready var sprite = $Sprite2D
 
+var ui_manager
+
 func _ready():
-	get_tree().get_first_node_in_group('Game').connect('on_power_change', can_interact)
+	ui_manager = get_tree().get_first_node_in_group('UI')
+	get_tree().get_first_node_in_group('Game').connect('on_power_state_changed', can_interact)
 
 func can_interact(state: bool):
 	if !state:
@@ -19,8 +22,8 @@ func can_interact(state: bool):
 func show_screen(screen: String):
 	match screen:
 		'desktop':
-			UIManager.show_screen('Desktop')
+			ui_manager.show_screen('Desktop')
 		'cameras', 'monitoring':
-			UIManager.show_screen('Cameras')
+			ui_manager.show_screen('Cameras')
 		_:
 			return

@@ -17,7 +17,7 @@ func _ready():
 		container.add_child(breakerInstance)
 		breakerInstance.breaker_id = i
 		breakerInstance.connect('change_breakers_state', change_state)
-	
+
 	screen.hide()
 
 func change_state(id: int, state: bool):
@@ -44,7 +44,7 @@ func check_breakers():
 			print("Power is back ON")
 		else:
 			print("Power is OFF")
-		get_tree().get_first_node_in_group('Game').on_power_change.emit(is_power_on)
+		get_tree().get_first_node_in_group('Game').on_power_state_changed.emit(is_power_on)
 
 func open_breakers(open: bool):
 	if open:
