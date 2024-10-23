@@ -17,7 +17,7 @@ func _ready():
 		container.add_child(breakerInstance)
 		breakerInstance.breaker_id = i
 		breakerInstance.connect('change_breakers_state', change_state)
-	
+
 	screen.hide()
 
 func change_state(id: int, state: bool):
